@@ -1,0 +1,23 @@
+{
+  "name": "gulp",
+  "version": "3.0.0",
+  "authors": [
+    "zorro76 <sergey.martynuk@gmail.com>"
+  ],
+  "description": "Development Workflow Tools",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "magnific-popup": "~1.1.0",
+    "normalize.css": "~3.0.2",
+    "slick-carousel": "~1.5.9",
+    "jquery.maskedinput": "~1.4.1"
+  }
+}

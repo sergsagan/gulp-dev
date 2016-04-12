@@ -1,0 +1,28 @@
+.btn{
+  padding: 7px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: $NotoSans;
+  font-size: $text-size;
+  line-height: $text-size;
+  font-weight: 400;
+  box-sizing: border-box;
+
+  &__light{
+    background-color: $bg-color;
+    color:  rgba(175, 70, 26, 1);
+    &:hover{
+      background-color: lighten($bg-color, 15%);
+      color: rgba(175, 70, 26, .75);
+    }
+  }
+
+  &__dark{
+    background-color: $stack-color;
+    color: rgba(234, 234, 234, .75);
+    &:hover{
+      background-color: lighten($stack-color, 15%);
+      color: rgba(234, 234, 234, 1);
+    }
+  }
+}

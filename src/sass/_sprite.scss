@@ -1,0 +1,47 @@
+.icon {
+    font-size: 16px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../img/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 1.4375em 7.1875em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../img/sprite.png");
+}
+
+.icon.icon-fb:before {
+    background-position: 0em 0em;
+    width: 1.4375em;
+    height: 1.4375em;
+}
+
+.icon.icon-google:before {
+    background-position: 0em -1.4375em;
+    width: 1.4375em;
+    height: 1.4375em;
+}
+
+.icon.icon-ln:before {
+    background-position: 0em -2.875em;
+    width: 1.4375em;
+    height: 1.4375em;
+}
+
+.icon.icon-skype:before {
+    background-position: 0em -4.3125em;
+    width: 1.375em;
+    height: 1.4375em;
+}
+
+.icon.icon-tw:before {
+    background-position: 0em -5.75em;
+    width: 1.4375em;
+    height: 1.4375em;
+}
+
