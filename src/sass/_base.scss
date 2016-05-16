@@ -4,24 +4,11 @@ body{
     margin: 0;
     padding: 0;
 }
-.clearfix:before,
-.clearfix:after{
-    content: "";
-    display: table;
-}
-
-.clearfix:after{
-    clear: both;
-}
-
-.clearfix{
-    zoom: 1; /* ie 6/7 */
-}
 
 ul > li{
     list-style: none;
     display: inline-block;
-    margin-left: 25px;
+    margin-left: 10px;
 }
 
 ul{

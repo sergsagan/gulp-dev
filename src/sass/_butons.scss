@@ -2,17 +2,16 @@
   padding: 7px 10px;
   border-radius: 5px;
   text-transform: uppercase;
-  font-family: $NotoSans;
-  font-size: $text-size;
-  line-height: $text-size;
+  font-size: 14px;
+  line-height: 14px;
   font-weight: 400;
   box-sizing: border-box;
 
   &__light{
-    background-color: $bg-color;
+    background-color: $base-color;
     color:  rgba(175, 70, 26, 1);
     &:hover{
-      background-color: lighten($bg-color, 15%);
+      background-color: lighten($base-color, 15%);
       color: rgba(175, 70, 26, .75);
     }
   }
