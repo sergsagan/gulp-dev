@@ -18,6 +18,7 @@ var gulp = require('gulp'),
     gulpIf = require('gulp-if'),
     util = require('gulp-util'),
     plumber = require('gulp-plumber'),
+    rigger = require('gulp-rigger'),
     svgSprites = require('gulp-svg-sprites'),
     svgmin = require('gulp-svgmin'),
     svg2png = require('gulp-svg2png'),
@@ -31,7 +32,7 @@ var src = {
         images: ['./src/img/**/*.*', './src/img/icons/*.svg', './src/sass/img/*.svg', '!./src/img/icons/sprites/*.svg'],
         sprites: ['./src/img/icons/sprites/*.svg'],
         fonts: ['./src/fonts/**/*.*'],
-        index: ['./src/index.html']
+        html: ['./src/*.html']
     },
 
     server = {
@@ -236,8 +237,9 @@ gulp.task('fonts', function() {
 
 
 // Copy index to output dir (minify for production)
-gulp.task('index', function() {
-    gulp.src(src.index)
+gulp.task('html', function() {
+    gulp.src(src.html)
+        .pipe(rigger())
         .pipe(gulpIf(env !== 'dev', minifyHTML()))
         .pipe(gulp.dest(outputDir))
         .pipe(connect.reload())
@@ -248,7 +250,7 @@ gulp.task('index', function() {
 gulp.task('watch', function() {
     gulp.watch(src.js, ['js']);
     gulp.watch('./src/sass/*.scss', ['styles']);
-    gulp.watch(src.index, ['index']);
+    gulp.watch('./src/**/*.html', ['html']);
     gulp.watch(src.images, ['images']);
     gulp.watch(src.fonts, ['fonts']);
 });
@@ -257,7 +259,7 @@ gulp.task('watch', function() {
 
 // ~Build tasks~
 //Build dev version
-gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'sprite', 'fonts', 'index']);
+gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'sprite', 'fonts', 'html']);
 
 // Build and run dev environment
 gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch']);
