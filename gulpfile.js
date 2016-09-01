@@ -116,13 +116,13 @@ gulp.task('styles:vendor', function() {
                   "main": "./dist/magnific-popup.css"
               },
 
-              "slick-carousel": {
+              /*"slick-carousel": {
                   "main": [
                       "./slick/slick.css",
                       "./slick/slick-theme.css",
-                      "./slick/fonts/*.*"
+                      "./slick/fonts/!*.*"
                   ]
-              }
+              }*/
           }
   }))
   .pipe(cssFilter)
@@ -139,7 +139,7 @@ gulp.task('styles', function() {
             noCache: true,
             compass: true,
             style: sassStyle,
-            lineNumbers: sassComments
+            lineNumbers: false
         }))
     .pipe(autoPrefixer())   
     .pipe(gulp.dest(outputDir + 'css'))
@@ -162,9 +162,9 @@ gulp.task('js:vendor', function() {
                   "main": "./dist/jquery.magnific-popup.min.js"
               },
 
-              "slick-carousel": {
+             /* "slick-carousel": {
                   "main": "./slick/slick.min.js"
-              },
+              },*/
 
               "jquery.maskedinput": {
                   "main": "./dist/jquery.maskedinput.min.js"
