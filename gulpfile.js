@@ -114,7 +114,7 @@ gulp.task('styles:vendor', function() {
 
               "magnific-popup": {
                   "main": "./dist/magnific-popup.css"
-              },
+              }
 
               /*"slick-carousel": {
                   "main": [
@@ -134,6 +134,7 @@ gulp.task('styles:vendor', function() {
 // Concat own SASS (uglify for production)
 gulp.task('styles', function() {
     gulp.src(src.sass)
+    .pipe(plumber({}))
     .pipe(sass({
             "sourcemap=none": true,
             noCache: true,
