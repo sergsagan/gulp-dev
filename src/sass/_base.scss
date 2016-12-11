@@ -60,6 +60,11 @@ a:hover, a:focus {
     outline: medium none;
 }
 
+/*a {
+    @include links(orange, blue, yellow, teal);
+}*/
+
+
 input {
     outline: none;
 }
@@ -92,23 +97,6 @@ a.disabled {
     float: right !important;
 }
 
-.text__base {
-    color: rgb(13, 25, 33);
-    font-family: 'Arial', sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 400;
-}
-
-.just_no {
-    -moz-user-select: none;
-    -o-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -o-user-select: none;
-}
 
 
 

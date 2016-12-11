@@ -108,21 +108,32 @@ var cssFilter = gulpFilter('**/*.css');
 gulp.task('styles:vendor', function() {
   gulp.src(mainBowerFiles({
           "overrides": {
+	          "bootstrap": {
+		          "main": [
+			          './dist/css/bootstrap.css',
+			          './dist/fonts/*.*'
+		          ]
+	          },
+            /*
               "normalize.css": {
                   "main": "./normalize.css"
-              },
+              },*/
 
               "magnific-popup": {
                   "main": "./dist/magnific-popup.css"
-              }
+              },
 
-              /*"slick-carousel": {
+              "slick-carousel": {
                   "main": [
                       "./slick/slick.css",
                       "./slick/slick-theme.css",
                       "./slick/fonts/!*.*"
                   ]
-              }*/
+              },
+              
+	          "wow": {
+		          "main": "./css/libs/animate.css"
+	          }
           }
   }))
   .pipe(cssFilter)
@@ -158,18 +169,26 @@ gulp.task('js:vendor', function() {
               "jquery": {
                   "main": "./dist/jquery.min.js"
               },
-
-              "magnific-popup": {
+	
+	          "bootstrap": {
+		          "main": './dist/js/bootstrap.min.js'
+	          },
+              
+	          "magnific-popup": {
                   "main": "./dist/jquery.magnific-popup.min.js"
               },
 
-             /* "slick-carousel": {
+             "slick-carousel": {
                   "main": "./slick/slick.min.js"
-              },*/
+              },
 
               "jquery.maskedinput": {
                   "main": "./dist/jquery.maskedinput.min.js"
-              }
+              },
+	
+	          "wow": {
+		          "main": "./dist/wow.min.js"
+	          }
           }
   }))
       .pipe(jsFilter)

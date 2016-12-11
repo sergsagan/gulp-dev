@@ -3,7 +3,83 @@ $(function() {
     $("head").append("<link rel='stylesheet' type='text/css' href='css/vendor.css' />");
 
     $("head").append("<link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' />");
-
+	
+	//anchor links
+	
+	$(".navbar-nav").on("click","a", function (event) {
+		event.preventDefault();
+		var id  = $(this).attr('href'),
+			top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
+	
+	$('nav li a').click(function () {
+		$('nav li').removeClass('active');
+		$(this).parent().addClass('active');
+		return true;
+	});
+	
+	//Scroll Top
+	
+	$('#scrollUp').mouseover(function(){
+		$( this ).animate({opacity: 0.65},100);
+	}).mouseout( function(){
+		$( this ).animate({opacity: 1},100);
+	}).click(function(e){
+		e.preventDefault();
+		$('body,html').animate({ scrollTop: 1 }, 1000);
+	});
+	
+	$(window).scroll(function(){
+		if ( $(document).scrollTop() > 0 ) {
+			$('#scrollUp').fadeIn('fast');
+		} else {
+			$('#scrollUp').fadeOut('fast');
+		}
+	});
+	
+	//modal
+	
+	$('.order,.order-form').click( function(event){
+		event.preventDefault();
+		$('#overlay').fadeIn(400, function(){
+			$('#modal-form').css('display', 'block');
+			$('#modal-form').animate({opacity: 1, top: '20%'}, 200);
+		});
+	});
+	
+	$('.form-close').click( function(){
+		$('#modal-form').animate({opacity: 0, top: '45%'}, 200,
+			function(){
+				$(this).css('display', 'none');
+				$('#overlay').fadeOut(400);
+				$('.form-of-training, .practices, .course').find(".name, .price, .price .rub").removeClass("active");
+			}
+		);
+	});
+	
+	//change
+	$('.form-of-training .order-form').click(function() {
+		$('.form-of-training').find(".name, .price, .price .rub").removeClass("active");
+		$(this).parents('.form-of-training').find(".name").toggleClass("active").fadeIn(400);
+		$(this).parents('.form-of-training').find(".price, .price .rub").toggleClass("active").fadeIn(400);
+	});
+	
+	$('.practices .order-form').click(function() {
+		$('.practices').find(".name, .price, .price .rub").removeClass("active");
+		$(this).parents('.practices').find(".name").toggleClass("active").fadeIn(400);
+		$(this).parents('.practices').find(".price, .price .rub").toggleClass("active").fadeIn(400);
+	});
+	
+	$('.course .order-form').click(function() {
+		$('.course').find(".name, .price, .price .rub").removeClass("active");
+		$(this).parents('.course').find(".name").toggleClass("active").fadeIn(400);
+		$(this).parents('.course').find(".price, .price .rub").toggleClass("active").fadeIn(400);
+	});
+	
+	new WOW().init();
+    
+    
     $('.fade').slick({
         speed: 500,
         fade: true,
@@ -47,113 +123,52 @@ $(function() {
             // instead of a settings object
         ]
     });
-
-    $('a[href^="#"]').click(function(){
-        var target = $(this).attr('href');
-        $('html, body').animate({scrollTop: $(target).offset().top}, 1000);
-        return false;
-    });
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
-            $('#scroll').fadeIn();
-        } else {
-            $('#scroll').fadeOut();
-        }
-    });
-    $('#scroll').click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 400);
-        return false;
-    });
-    $('nav li a').click(function () {
-        $('nav li').removeClass('active');
-        $(this).parent().addClass('active');
-        return true;
-    });
-
-
-    $('.rf').each(function(){
-        // Объявляем переменные (форма и кнопка отправки)
-        var form = $(this),
-            btn = form.find('.btn_submit');
-
-        // Добавляем каждому проверяемому полю, указание что поле пустое
-        form.find('.rfield').addClass('empty_field');
-
-        // Функция проверки полей формы
-        function checkInput(){
-            form.find('.rfield').each(function(){
-                if($(this).val() != ''){
-                    // Если поле не пустое удаляем класс-указание
-                    $(this).removeClass('empty_field');
-                } else {
-                    // Если поле пустое добавляем класс-указание
-                    $(this).addClass('empty_field');
-                }
-            });
-        }
-
-        // Функция подсветки незаполненных полей
-        function lightEmpty(){
-            form.find('.empty_field').css({'border-color':'#d8512d'});
-            // Через полсекунды удаляем подсветку
-            setTimeout(function(){
-                form.find('.empty_field').removeAttr('style');
-            },500);
-        }
-
-        // Проверка в режиме реального времени
-        setInterval(function(){
-            // Запускаем функцию проверки полей на заполненность
-            checkInput();
-            // Считаем к-во незаполненных полей
-            var sizeEmpty = form.find('.empty_field').size();
-            // Вешаем условие-тригер на кнопку отправки формы
-            if(sizeEmpty > 0){
-                if(btn.hasClass('disabled')){
-                    return false
-                } else {
-                    btn.addClass('disabled')
-                }
-            } else {
-                btn.removeClass('disabled')
-            }
-        },500);
-
-        // Событие клика по кнопке отправить
-        btn.click(function(){
-            if($(this).hasClass('disabled')){
-                // подсвечиваем незаполненные поля и форму не отправляем, если есть незаполненные поля
-                lightEmpty();
-                return false
-            } else {
-                // Все хорошо, все заполнено, отправляем форму
-                form.submit();
-            }
-        });
-    });
+    
 
     $("#phone").mask("+38 (999) 999-99-99");
+	
+	var today = new Date(),
+		ts = new Date( today.getFullYear(), today.getMonth(), today.getDate() + 7),
+		newYear = true;
+	
+	$('#countdown').countdown({
+		timestamp	: ts,
+		callback	: function(days, hours, minutes, seconds){
+			
+			var message = "";
+			
+			message += days + " <i>дней</i> " + ( days==1 ? '':'' ) + "";
+			message += hours + "" + ( hours==1 ? '':':' ) + "";
+			message += minutes + "" + ( minutes==1 ? '':':' ) + "";
+			message += seconds + " " + ( seconds==1 ? '':' ' ) + " ";
+			
+			if(newYear){
+				message += "";
+			}
+			else {
+				message += "";
+			}
+		}
+	});
 
-
-
-
+    
     //Аякс отправка форм
     //Документация: http://api.jquery.com/jquery.ajax/
-    $("#form").submit(function() {
-        $.ajax({
-            type: "POST",
-            url: "mail.php",
-            data: $(this).serialize()
-        }).done(function() {
-            alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
-            setTimeout(function() {
-
-                $("#form").trigger("reset");
-            }, 1000);
-        });
-        return false;
-    });
+	$("#feadback-form").submit(function() {
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$('#feadback-form')[0].reset(
+				setTimeout(function () {}, 1000)
+			);
+			
+			$('#popUpMessage').removeClass('hiddenDiv');
+			setTimeout(function () {
+				$('#popUpMessage').addClass('hiddenDiv');
+			}, 2000);
+		});
+		return false;
+	});
 });
