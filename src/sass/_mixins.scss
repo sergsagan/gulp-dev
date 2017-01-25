@@ -105,6 +105,9 @@
   -webkit-transition: $transition;
   transition:         $transition;
 }
+
+//mixin transition-property
+
 @mixin transition-property($property...) {
   -moz-transition-property:    $property;
   -o-transition-property:      $property;
