@@ -8,6 +8,8 @@
   @return $string;
 }
 
+//mixin font-face
+
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
   $src: null;
 
@@ -35,6 +37,8 @@
   }
 }
 
+//mixin clearfix
+
 @mixin clearfix {
   &:after,
   &:before{
@@ -47,10 +51,14 @@
   }
 }
 
+//mixin inline-block
+
 @mixin inlineblock ($valine: top){
   display: inline-block;
   vertical-align: $valine;
 }
+
+//mixin border-radius
 
 @mixin border-radius($radius: 5px) {
   -webkit-border-radius: $radius;
@@ -63,11 +71,16 @@
   background-clip: padding-box;
 }
 
+
+//mixin box-shadow
+
 @mixin box-shadow ($string...){
   -webkit-box-shadow: $string;
   -moz-box-shadow: $string;
   box-shadow: $string;
 }
+
+//mixin input-placeholder
 
 @mixin placeholder($color: $base-color){
   &::-webkit-input-placeholder{
@@ -83,6 +96,8 @@
     color: $color;
   }
 }
+
+//mixin transition
 
 @mixin transition($transition...) {
   -moz-transition:    $transition;
@@ -115,6 +130,8 @@
   transition-delay:         $delay;
 }
 
+//mixin links
+
 @mixin links ($link, $visited, $hover, $active) {
   & {
     color: $link;
@@ -127,5 +144,15 @@
     &:active, &:focus {
       color: $active;
     }
+  }
+}
+
+//mixin border
+
+@mixin border($color, $width, $style){
+  &{
+    border-color: $color;
+    border-width: $width;
+    border-style: $style;
   }
 }

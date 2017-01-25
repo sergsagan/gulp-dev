@@ -19,6 +19,7 @@
     "magnific-popup": "~1.1.0",
     "normalize.css": "~3.0.2",
     "slick-carousel": "~1.5.9",
+    "bxslider-4": "^4.2.5",
     "jquery.maskedinput": "~1.4.1",
     "wow": "~1.1.2"
   }

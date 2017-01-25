@@ -1,0 +1,169 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 2000px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.empty {
+  height: 230px;
+}
+
+h1, h2, h3, h4, h5, h5 {
+  margin: 0;
+}
+
+ul > li {
+  list-style: none;
+  display: inline-block;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  outline: medium none;
+}
+
+/*a {
+    @include links(orange, blue, yellow, teal);
+}*/
+input {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  border: none 0;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+.icon:before {
+  content: ' ';
+  vertical-align: middle;
+  display: inline-block;
+  background-image: url("../img/sprite.svg");
+  background-repeat: no-repeat;
+  background-size: 1.4375em 7.1875em;
+}
+
+.no-svg .icon:before {
+  background-image: url("../img/sprite.png");
+}
+
+.icon.icon-fb:before {
+  background-position: 0em 0em;
+  width: 1.4375em;
+  height: 1.4375em;
+}
+
+.icon.icon-google:before {
+  background-position: 0em -1.4375em;
+  width: 1.4375em;
+  height: 1.4375em;
+}
+
+.icon.icon-ln:before {
+  background-position: 0em -2.875em;
+  width: 1.4375em;
+  height: 1.4375em;
+}
+
+.icon.icon-skype:before {
+  background-position: 0em -4.3125em;
+  width: 1.375em;
+  height: 1.4375em;
+}
+
+.icon.icon-tw:before {
+  background-position: 0em -5.75em;
+  width: 1.4375em;
+  height: 1.4375em;
+}
+
+.btn {
+  padding: 7px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+.btn__light {
+  background-color: #888888;
+  color: #af461a;
+}
+.btn__light:hover {
+  background-color: #aeaeae;
+  color: rgba(175, 70, 26, 0.75);
+}
+.btn__dark {
+  background-color: #af461a;
+  color: rgba(234, 234, 234, 0.75);
+}
+.btn__dark:hover {
+  background-color: #e16735;
+  color: #eaeaea;
+}

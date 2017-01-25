@@ -181,6 +181,10 @@ gulp.task('js:vendor', function() {
              "slick-carousel": {
                   "main": "./slick/slick.min.js"
               },
+	
+	          "bxslider-4": {
+		          "main": './dist/jquery.bxslider.min.js'
+	          },
 
               "jquery.maskedinput": {
                   "main": "./dist/jquery.maskedinput.min.js"
