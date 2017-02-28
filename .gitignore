@@ -3,3 +3,5 @@
 /node_modules
 /bower_components
 /builds
+Будет удалено src/img/sprite.png
+Будет удалено src/sass/_sprite.scss

@@ -1,8 +1,12 @@
-# My gulp template
+# My gulp-template
+
+скачиваем, устанавливаем зависимости:
 # npm && bower install
-
+собираем проект:
+# gulp build
+запускаем проект:
 # gulp default
-
+выбираем тип сборки:
 # builds/development & builds/production
-
-# enjoy gulp-ruby-sass, main-bower-files, gulp-svg-sprites
+используются:
+# enjoy gulp-ruby-sass, main-bower-files, gulp-sprites

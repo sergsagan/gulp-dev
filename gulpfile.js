@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoPrefixer = require('gulp-autoprefixer'),
-    minifyCSS= require('gulp-minify-css'),
+	cleanCSS = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
     minifyHTML = require('gulp-minify-html'),
     imageMin = require('gulp-imagemin'),
@@ -19,9 +19,7 @@ var gulp = require('gulp'),
     util = require('gulp-util'),
     plumber = require('gulp-plumber'),
     rigger = require('gulp-rigger'),
-    svgSprites = require('gulp-svg-sprites'),
-    svgmin = require('gulp-svgmin'),
-    svg2png = require('gulp-svg2png'),
+	spritesmith = require('gulp.spritesmith'),
     size = require('gulp-size'),
     opn = require('opn');
 
@@ -29,8 +27,8 @@ var gulp = require('gulp'),
 var src = {
         js: ['./src/js/**/*.js'],
         sass: ['./src/sass/main.{scss,sass}'],
-        images: ['./src/img/**/*.*', './src/img/icons/*.svg', './src/sass/img/*.svg', '!./src/img/icons/sprites/*.svg'],
-        sprites: ['./src/img/icons/sprites/*.svg'],
+        images: ['./src/img/**/*.*', '!./src/img/icons/*.png'],
+        sprites: ['./src/img/icons/*.png'],
         fonts: ['./src/fonts/**/*.*'],
         html: ['./src/*.html']
     },
@@ -138,7 +136,8 @@ gulp.task('styles:vendor', function() {
   }))
   .pipe(cssFilter)
   .pipe(concat('vendor.css'))
-  .pipe(gulpIf(env !== 'dev', minifyCSS()))
+  .pipe(gulpIf(env !== 'dev', cleanCSS({compatibility: 'ie8'})))
+  .pipe(size())
   .pipe(gulp.dest(outputDir + 'css'))
 });
 
@@ -155,6 +154,7 @@ gulp.task('styles', function() {
         }))
     .pipe(autoPrefixer())   
     .pipe(gulp.dest(outputDir + 'css'))
+	.pipe(size())
     .pipe(connect.reload())
 });
 
@@ -198,6 +198,7 @@ gulp.task('js:vendor', function() {
       .pipe(jsFilter)
       .pipe(concat('vendor.js'))
       .pipe(gulpIf(env !== 'dev', uglify()))
+	  .pipe(size())
       .pipe(gulp.dest(outputDir + 'js'))
 });
 
@@ -209,6 +210,7 @@ gulp.task('js', function() {
         .pipe(concat('script.js'))
         .pipe(gulpIf(env !== 'dev', uglify()))
         .pipe(gulp.dest(outputDir + 'js'))
+	    .pipe(size())
         .pipe(connect.reload());
 });
 
@@ -231,7 +233,7 @@ gulp.task('images', function() {
 
 //SVG-sprite
 
-gulp.task('sprite', function() {
+/*gulp.task('sprite', function() {
     return gulp.src(src.sprites)
         .pipe(svgSprites(config = {
             selector: "icon-%f",
@@ -247,7 +249,37 @@ gulp.task('sprite', function() {
         }))
         .pipe(gulp.dest('./src/sass'))
         .pipe(connect.reload())
+});*/
+
+// ~ Sprite ~
+
+/*gulp.task('sprite', function () {
+	var spriteData = gulp.src(src.sprites).pipe(spritesmith({
+		imgName: 'sprite.png',
+		cssName: 'sprite.css'
+	}));
+	return spriteData.pipe(gulp.dest(outputDir + 'img'));
+});*/
+
+// Удаление старых файлов
+gulp.task('sprite-clean', function (cb) {
+	del(['./src/img/sprite.png', './src/sass/_sprite.scss'], cb);
 });
+
+
+gulp.task('sprite', function () {
+	var spriteData = gulp.src(src.sprites).pipe(spritesmith({
+		imgName: '../img/sprite.png',
+		cssName: '_sprite.scss',
+		cssFormat: 'scss',
+		padding: 0
+	}));
+	
+	spriteData.img.pipe(gulp.dest('./src/img'));
+	spriteData.css.pipe(gulp.dest('./src/sass'));
+});
+
+
 
 
 // ~ Fonts ~
@@ -266,6 +298,7 @@ gulp.task('html', function() {
         .pipe(rigger())
         .pipe(gulpIf(env !== 'dev', minifyHTML()))
         .pipe(gulp.dest(outputDir))
+	    .pipe(size())
         .pipe(connect.reload())
 });
 
@@ -283,7 +316,7 @@ gulp.task('watch', function() {
 
 // ~Build tasks~
 //Build dev version
-gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'sprite', 'fonts', 'html']);
+gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'html']);
 
 // Build and run dev environment
 gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch']);

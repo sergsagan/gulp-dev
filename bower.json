@@ -1,9 +1,7 @@
 {
-  "name": "gulp",
+  "name": "gulp-template",
   "version": "3.0.1",
-  "authors": [
-    "zorro76 <sergey.martynuk@gmail.com>"
-  ],
+  "authors": "sergsagan",
   "description": "Development Workflow Tools",
   "license": "MIT",
   "ignore": [
