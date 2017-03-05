@@ -1,7 +1,8 @@
 // Requiring packages
 
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+	cssGlobbing = require('gulp-css-globbing'),
+	sass = require('gulp-sass'),
     autoPrefixer = require('gulp-autoprefixer'),
 	cleanCSS = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
@@ -142,20 +143,18 @@ gulp.task('styles:vendor', function() {
 });
 
 // Concat own SASS (uglify for production)
-gulp.task('styles', function() {
-    gulp.src(src.sass)
-    .pipe(plumber({}))
-    .pipe(sass({
-            "sourcemap=none": true,
-            noCache: true,
-            compass: true,
-            style: sassStyle,
-            lineNumbers: false
-        }))
-    .pipe(autoPrefixer())   
-    .pipe(gulp.dest(outputDir + 'css'))
-	.pipe(size())
-    .pipe(connect.reload())
+
+gulp.task('styles', function () {
+	gulp.src(src.sass)
+		.pipe(plumber({}))
+		.pipe(sass({
+			precision: 3,
+			includePaths: ['.']
+		}))
+		.pipe(autoPrefixer())
+		.pipe(gulp.dest(outputDir + 'css'))
+		.pipe(size())
+		.pipe(connect.reload())
 });
 
 
