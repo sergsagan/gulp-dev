@@ -129,6 +129,17 @@ gulp.task('styles:vendor', function() {
                       "./slick/fonts/!*.*"
                   ]
               },
+
+              "ionrangeslider": {
+                  "main": [
+                      './css/ion.rangeSlider.css',
+                      './css/ion.rangeSlider.skinHTML5.css'
+                  ]
+              },
+
+              "jquery.form-styler": {
+                  "main": "./dist/jquery.formstyler.css"
+              },
               
 	          "wow": {
 		          "main": "./css/libs/animate.css"
@@ -187,6 +198,14 @@ gulp.task('js:vendor', function() {
 
               "jquery.maskedinput": {
                   "main": "./dist/jquery.maskedinput.min.js"
+              },
+
+              "jquery.form-styler": {
+                  "main": "./dist/jquery.formstyler.min.js"
+              },
+
+              "readmore-js": {
+                  "main": "./readmore.js"
               },
 	
 	          "wow": {
