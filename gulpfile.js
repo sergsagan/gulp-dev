@@ -22,6 +22,8 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
 	spritesmith = require('gulp.spritesmith'),
     svgSprite = require("gulp-svg-sprites"),
+    svg2png = require('gulp-svg2png'),
+    /*svgo = require('gulp-svgo'),*/
     size = require('gulp-size'),
     opn = require('opn');
 
