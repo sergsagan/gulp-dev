@@ -21,6 +21,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rigger = require('gulp-rigger'),
 	spritesmith = require('gulp.spritesmith'),
+    svgSprite = require("gulp-svg-sprites"),
     size = require('gulp-size'),
     opn = require('opn');
 
@@ -28,8 +29,9 @@ var gulp = require('gulp'),
 var src = {
         js: ['./src/js/**/*.js'],
         sass: ['./src/sass/main.{scss,sass}'],
-        images: ['./src/img/**/*.*', '!./src/img/icons/*.png'],
-        sprites: ['./src/img/icons/*.png'],
+        images: ['./src/img/**/*.*', './src/sass/img/*.svg', '!./src/img/icons/sprites/*.png', '!./src/img/icons/sprites/*.svg'],
+        sprite: ['./src/img/icons/*.png'],
+        svgsprite: ['./src/img/icons/sprites/*.svg'],
         fonts: ['./src/fonts/**/*.*'],
         html: ['./src/*.html']
     },
@@ -251,25 +253,30 @@ gulp.task('images', function() {
 
 //SVG-sprite
 
-/*gulp.task('sprite', function() {
-    return gulp.src(src.sprites)
-        .pipe(svgSprites(config = {
+gulp.task('svgsprite', function() {
+    return gulp.src(src.svgsprite)
+        .pipe(svgSprite(config = {
+            preview: false,
             selector: "icon-%f",
-            cssFile: "_sprite.scss",
+            cssFile: "_svgsprite.scss",
             svg: {
                 sprite: "img/sprite.svg"
             },
             dimension       : {
-                maxWidth    : 16,
-                maxHeight   : 16
+                maxWidth    : 32,
+                maxHeight   : 32
             },
-            baseSize: 16
+            baseSize: 32
         }))
         .pipe(gulp.dest('./src/sass'))
         .pipe(connect.reload())
-});*/
+});
 
-// ~ Sprite ~
+gulp.task('svgsprite-clean', function (cb) {
+    del(['./src/sass/img/sprite.svg','./src/sass/_svgsprite.scss'], cb);
+});
+
+// ~ Sprite png ~
 
 /*gulp.task('sprite', function () {
 	var spriteData = gulp.src(src.sprites).pipe(spritesmith({
@@ -279,10 +286,6 @@ gulp.task('images', function() {
 	return spriteData.pipe(gulp.dest(outputDir + 'img'));
 });*/
 
-// Удаление старых файлов
-gulp.task('sprite-clean', function (cb) {
-	del(['./src/img/sprite.png', './src/sass/_sprite.scss'], cb);
-});
 
 
 gulp.task('sprite', function () {
@@ -297,7 +300,10 @@ gulp.task('sprite', function () {
 	spriteData.css.pipe(gulp.dest('./src/sass'));
 });
 
-
+// Удаление старых файлов
+gulp.task('sprite-clean', function (cb) {
+    del(['./src/img/sprite.png', './src/sass/_sprite.scss'], cb);
+});
 
 
 // ~ Fonts ~
