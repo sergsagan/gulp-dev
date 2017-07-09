@@ -22,9 +22,10 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
 	spritesmith = require('gulp.spritesmith'),
     svgSprite = require("gulp-svg-sprites"),
-    svg2png = require('gulp-svg2png'),
+    /*svg2png = require('gulp-svg2png'),*/
     /*svgo = require('gulp-svgo'),*/
     size = require('gulp-size'),
+    ftp  = require('vinyl-ftp'),
     opn = require('opn');
 
 // Declaring paths and variables
@@ -77,6 +78,27 @@ gulp.task('webServer', function() {
         livereload: true
     });
 });
+
+//Deploy
+gulp.task('deploy', function() {
+
+    var conn = ftp.create({
+        host:      '31.220.104.125',
+        user:      'u147331589',
+        password:  'aa5517ck',
+        parallel:  10,
+        log: util.log
+    });
+
+    var globs = [
+        'builds/development/**',
+        'builds/development/.htaccess'
+    ];
+    return gulp.src(globs, {buffer: false})
+        .pipe( conn.newer( '/public_html/gulp-dev' ) ) // only upload newer files
+        .pipe( conn.dest( '/public_html/gulp-dev' ) );
+});
+
 
 // Open browser
 gulp.task('openBrowser', function() {
@@ -317,7 +339,6 @@ gulp.task('fonts', function() {
 });
 
 
-
 // Copy index to output dir (minify for production)
 gulp.task('html', function() {
     gulp.src(src.html)
@@ -345,4 +366,4 @@ gulp.task('watch', function() {
 gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'html']);
 
 // Build and run dev environment
-gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch']);
+gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch', 'deploy']);
