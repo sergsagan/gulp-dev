@@ -32,7 +32,7 @@ var gulp = require('gulp'),
 var src = {
         js: ['./src/js/**/*.js'],
         sass: ['./src/sass/main.{scss,sass}'],
-        images: ['./src/img/**/*.*', './src/sass/img/*.svg', '!./src/img/icons/sprites/*.png', '!./src/img/icons/sprites/*.svg'],
+        images: ['./src/img/**/*.*', './src/sass/img/svg/*.svg', '!./src/img/icons/sprites/*.png', '!./src/img/icons/sprites/*.svg'],
         sprite: ['./src/img/icons/*.png'],
         svgsprite: ['./src/img/icons/sprites/*.svg'],
         fonts: ['./src/fonts/**/*.*'],
@@ -41,7 +41,7 @@ var src = {
 
     server = {
         host: 'localhost',
-        port: '9000'
+        port: '9003'
     },
 
     env,
@@ -77,26 +77,6 @@ gulp.task('webServer', function() {
         port: server.port,
         livereload: true
     });
-});
-
-//Deploy
-gulp.task('deploy', function() {
-
-    var conn = ftp.create({
-        host:      '31.220.104.125',
-        user:      'u147331589',
-        password:  'aa5517ck',
-        parallel:  10,
-        log: util.log
-    });
-
-    var globs = [
-        'builds/development/**',
-        'builds/development/.htaccess'
-    ];
-    return gulp.src(globs, {buffer: false})
-        .pipe( conn.newer( '/public_html/gulp-dev' ) ) // only upload newer files
-        .pipe( conn.dest( '/public_html/gulp-dev' ) );
 });
 
 
@@ -277,39 +257,32 @@ gulp.task('images', function() {
 
 //SVG-sprite
 
-gulp.task('svgsprite', function() {
+gulp.task('svg-sprite', function (cb) {
     return gulp.src(src.svgsprite)
         .pipe(svgSprite(config = {
-            preview: false,
-            selector: "icon-%f",
-            cssFile: "_svgsprite.scss",
-            svg: {
-                sprite: "img/sprite.svg"
+            shape: {
+                dimension: {         // Set maximum dimensions
+                    maxWidth: 500,
+                    maxHeight: 500
+                },
+                spacing: {         // Add padding
+                    padding: 0
+                }
             },
-            dimension       : {
-                maxWidth    : 32,
-                maxHeight   : 32
-            },
-            baseSize: 32
+            mode: {
+                symbol: {
+                    dest : '.'
+                }
+            }
         }))
-        .pipe(gulp.dest('./src/sass'))
-        .pipe(connect.reload())
+        .pipe(gulp.dest('./src/img/'));
 });
 
 gulp.task('svgsprite-clean', function (cb) {
-    del(['./src/sass/img/sprite.svg','./src/sass/_svgsprite.scss'], cb);
+    del(['./src/sass/img/svg'], cb);
 });
 
 // ~ Sprite png ~
-
-/*gulp.task('sprite', function () {
-	var spriteData = gulp.src(src.sprites).pipe(spritesmith({
-		imgName: 'sprite.png',
-		cssName: 'sprite.css'
-	}));
-	return spriteData.pipe(gulp.dest(outputDir + 'img'));
-});*/
-
 
 
 gulp.task('sprite', function () {
@@ -366,4 +339,4 @@ gulp.task('watch', function() {
 gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'html']);
 
 // Build and run dev environment
-gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch', 'deploy']);
+gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch']);

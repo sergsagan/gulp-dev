@@ -1,0 +1,13 @@
+.inline-svg-icon{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  fill: lightblue;
+  margin-right: 20px;
+  cursor: pointer;
+  @include transition(all .5s);
+
+  &:hover{
+    fill: darken(lightblue, 10%);
+  }
+}
