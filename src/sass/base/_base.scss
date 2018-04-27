@@ -20,14 +20,21 @@ body {
 * {
     box-sizing: border-box;
 }
-
 .wrapper {
-    max-width: 2000px;
+    max-width: 1920px;
     width: 100%;
     margin: 0 auto;
     min-height: 100%;
     overflow: hidden;
     position: relative;
+}
+
+.container{
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .hidden {

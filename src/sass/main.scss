@@ -1,8 +1,41 @@
-@import "variables";
-@import "fonts";
-@import "mixins";
-@import "base";
-@import "style";
-@import "buttons";
-@import "forms";
-@import "media";
+//changed vendor styles
+
+@import "vendors-extensions/extensions";
+
+//tools and assistants
+
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/helpers';
+
+//common project template
+
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+
+//main components
+
+@import 'layout/navigation';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+//small components
+
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/cover';
+@import 'components/dropdown';
+@import 'components/media';
+
+//page styles
+
+@import 'pages/home';
+
+//skin themes
+
+@import 'themes/theme';

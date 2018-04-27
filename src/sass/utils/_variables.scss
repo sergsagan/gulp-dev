@@ -1,0 +1,21 @@
+//Color
+
+$base-color: rgb(255, 255, 255);
+
+$stack-color: rgb(131, 166, 228);
+
+
+
+//Font-Family
+
+$OpenSans: 'Open Sans', sans-serif;
+
+
+//breakpoints
+
+$breakpoints: (
+        'xs': (max-width: 480px),
+        'sm': (max-width: 768px),
+        'md': (max-width: 1024px),
+        'lg': (max-width: 1200px)
+);
