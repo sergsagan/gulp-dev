@@ -1,7 +1,6 @@
 // Requiring packages
 
 var gulp = require('gulp'),
-	cssGlobbing = require('gulp-css-globbing'),
 	sass = require('gulp-sass'),
     autoPrefixer = require('gulp-autoprefixer'),
 	cleanCSS = require('gulp-clean-css'),
@@ -11,13 +10,11 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     jsHint = require('gulp-jshint'),
     concat = require('gulp-concat'),
-    cache = require('gulp-cache'),
     del = require('del'),
     gulpFilter = require('gulp-filter'),
     mainBowerFiles = require('main-bower-files'),
     connect = require('gulp-connect'),
     gulpIf = require('gulp-if'),
-    util = require('gulp-util'),
     plumber = require('gulp-plumber'),
     rigger = require('gulp-rigger'),
 	spritesmith = require('gulp.spritesmith'),
@@ -25,8 +22,8 @@ var gulp = require('gulp'),
     /*svg2png = require('gulp-svg2png'),*/
     /*svgo = require('gulp-svgo'),*/
     size = require('gulp-size'),
-    ftp  = require('vinyl-ftp'),
-    opn = require('opn');
+    opn = require('opn'),
+    pug = require('gulp-pug');
 
 // Declaring paths and variables
 var src = {
@@ -36,12 +33,13 @@ var src = {
         sprite: ['./src/img/icons/*.png'],
         svgsprite: ['./src/img/icons/sprites/*.svg'],
         fonts: ['./src/fonts/**/*.*'],
-        html: ['./src/*.html']
+        html: ['./src/*.html'],
+        pug: ['./src/**/*.pug']
     },
 
     server = {
         host: 'localhost',
-        port: '9003'
+        port: '9002'
     },
 
     env,
@@ -322,12 +320,22 @@ gulp.task('html', function() {
         .pipe(connect.reload())
 });
 
+gulp.task('pug', function() {
+    gulp.src(src.pug)
+        .pipe(rigger())
+        .pipe(pug({
+            pretty: '\t'
+        }))
+        .pipe(gulp.dest(outputDir))
+        .pipe(connect.reload())
+
+});
 
 // Watch for changes in /src directories
 gulp.task('watch', function() {
     gulp.watch(src.js, ['js']);
     gulp.watch('./src/sass/*.scss', ['styles']);
-    gulp.watch('./src/**/*.html', ['html']);
+    gulp.watch('./src/**/*.pug', ['pug']);
     gulp.watch(src.images, ['images']);
     gulp.watch(src.fonts, ['fonts']);
 });
@@ -336,7 +344,7 @@ gulp.task('watch', function() {
 
 // ~Build tasks~
 //Build dev version
-gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'html']);
+gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'pug']);
 
 // Build and run dev environment
 gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch']);
