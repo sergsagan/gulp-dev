@@ -1,0 +1,28 @@
+include include/mixins
+
+doctype html
+html(lang = "en")
+    head
+
+        meta(charset = "utf-8")
+        meta(http-equiv = "X-UA-Compatible", content = "IE=edge,chrome=1")
+
+        block title
+
+        meta(name = "keywords", content = "")
+        meta(name = "description", content = "")
+        meta(name = "viewport", content = "width=device-width, initial-scale=1")
+        meta(name = "SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+
+        block css
+            +styles('https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic', 'css/main.css', 'css/vendor.css')
+
+
+        // if IE
+            script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+            script(src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js")
+
+    body
+        block content
+
+

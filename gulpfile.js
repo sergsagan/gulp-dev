@@ -34,7 +34,7 @@ var src = {
         svgsprite: ['./src/img/icons/sprites/*.svg'],
         fonts: ['./src/fonts/**/*.*'],
         html: ['./src/*.html'],
-        pug: ['./src/**/*.pug']
+        pug: ['./src/*.pug', '!./src/base.pug']
     },
 
     server = {
