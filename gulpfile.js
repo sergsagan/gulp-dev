@@ -19,8 +19,6 @@ var gulp = require('gulp'),
     rigger = require('gulp-rigger'),
 	spritesmith = require('gulp.spritesmith'),
     svgSprite = require("gulp-svg-sprites"),
-    /*svg2png = require('gulp-svg2png'),*/
-    /*svgo = require('gulp-svgo'),*/
     size = require('gulp-size'),
     opn = require('opn'),
     pug = require('gulp-pug');
@@ -276,7 +274,7 @@ gulp.task('svgsprite-clean', function (cb) {
 
 
 gulp.task('sprite', function () {
-	var spriteData = gulp.src(src.sprites).pipe(spritesmith({
+	var spriteData = gulp.src(src.sprite).pipe(spritesmith({
 		imgName: '../img/sprite.png',
 		cssName: '_sprite.scss',
 		cssFormat: 'scss',
@@ -284,7 +282,7 @@ gulp.task('sprite', function () {
 	}));
 	
 	spriteData.img.pipe(gulp.dest('./src/img'));
-	spriteData.css.pipe(gulp.dest('./src/sass'));
+	spriteData.css.pipe(gulp.dest('./src/sass/utils'));
 });
 
 // Удаление старых файлов

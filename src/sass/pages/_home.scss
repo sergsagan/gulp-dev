@@ -1,0 +1,8 @@
+.menu-icon-1{
+  display: inline-block;
+  @include sprite($amazon);
+}
+.menu-icon-2{
+  display: inline-block;
+  @include sprite($browser);
+}
