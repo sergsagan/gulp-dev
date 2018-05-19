@@ -143,11 +143,7 @@ gulp.task('styles:vendor', function() {
 
               "jquery.form-styler": {
                   "main": "./dist/jquery.formstyler.css"
-              },
-              
-	          "wow": {
-		          "main": "./css/libs/animate.css"
-	          }
+              }
           }
   }))
   .pipe(cssFilter)
@@ -210,11 +206,7 @@ gulp.task('js:vendor', function() {
 
               "readmore-js": {
                   "main": "./readmore.js"
-              },
-	
-	          "wow": {
-		          "main": "./dist/wow.min.js"
-	          }
+              }
           }
   }))
       .pipe(jsFilter)
