@@ -9,7 +9,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "Arial", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 16px;
     -webkit-font-smoothing: subpixel-antialiased !important;
     -webkit-backface-visibility: hidden;
@@ -27,14 +27,6 @@ body {
     min-height: 100%;
     overflow: hidden;
     position: relative;
-}
-
-.container{
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    padding: 0 15px;
-    margin: 0 auto;
 }
 
 .hidden {

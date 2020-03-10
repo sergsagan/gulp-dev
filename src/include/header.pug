@@ -1,8 +1,0 @@
-header
-    .container
-
-        - var nav = {'menu-1': 'index.html', 'menu-2': 'index2.html', 'menu-3': 'index3.html', 'menu-4': 'index4.html'}
-
-         ul
-            each linkPath, linkName in nav
-                li: a(href= linkPath) #{linkName}

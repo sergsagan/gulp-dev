@@ -1,18 +1,13 @@
-//Color
-
+//Colors
+$dark-color: rgb(0, 0, 0);
+$stack-color: rgb(144, 150, 92);
+$accent-color: rgb(30, 30, 30);
 $base-color: rgb(255, 255, 255);
 
-$stack-color: rgb(131, 166, 228);
-
-
-
 //Font-Family
-
-$OpenSans: 'Open Sans', sans-serif;
-
+$Montserrat: 'Montserrat', sans-serif;
 
 //breakpoints
-
 $breakpoints: (
         'xs': (max-width: 480px),
         'sm': (max-width: 768px),

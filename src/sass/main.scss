@@ -1,9 +1,7 @@
 //changed vendor styles
-
 @import "vendors-extensions/extensions";
 
 //tools and assistants
-
 @import 'utils/sprite';
 @import 'utils/variables';
 @import 'utils/functions';
@@ -11,22 +9,20 @@
 @import 'utils/helpers';
 
 //common project include
-
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/typography';
 
 //main components
-
 @import 'layout/navigation';
 @import 'layout/grid';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/sidebar';
 @import 'layout/forms';
+@import 'layout/section';
 
 //small components
-
 @import 'components/buttons';
 @import 'components/carousel';
 @import 'components/cover';
@@ -34,9 +30,7 @@
 @import 'components/media';
 
 //page styles
-
-@import 'pages/home';
+@import 'pages/section-home';
 
 //skin themes
-
 @import 'themes/theme';

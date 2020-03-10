@@ -20,8 +20,7 @@ var gulp = require('gulp'),
 	spritesmith = require('gulp.spritesmith'),
     svgSprite = require("gulp-svg-sprites"),
     size = require('gulp-size'),
-    opn = require('opn'),
-    pug = require('gulp-pug');
+    opn = require('opn');
 
 // Declaring paths and variables
 var src = {
@@ -31,8 +30,7 @@ var src = {
         sprite: ['./src/img/icons/*.png'],
         svgsprite: ['./src/img/icons/sprites/*.svg'],
         fonts: ['./src/fonts/**/*.*'],
-        html: ['./src/*.html'],
-        pug: ['./src/*.pug', '!./src/base.pug']
+        html: ['./src/*.html']
     },
 
     server = {
@@ -109,21 +107,9 @@ var cssFilter = gulpFilter('**/*.css');
 gulp.task('styles:vendor', function() {
   gulp.src(mainBowerFiles({
           "overrides": {
-	          "bootstrap": {
-		          "main": [
-			          './dist/css/bootstrap.css',
-			          './dist/fonts/*.*'
-		          ]
-	          },
-            /*
               "normalize.css": {
                   "main": "./normalize.css"
-              },*/
-
-              "magnific-popup": {
-                  "main": "./dist/magnific-popup.css"
               },
-
               "slick-carousel": {
                   "main": [
                       "./slick/slick.css",
@@ -131,17 +117,6 @@ gulp.task('styles:vendor', function() {
                       "./slick/fonts/!*.*"
                   ]
               },
-
-              "ionrangeslider": {
-                  "main": [
-                      './css/ion.rangeSlider.css',
-                      './css/ion.rangeSlider.skinHTML5.css'
-                  ]
-              },
-
-              "jquery.form-styler": {
-                  "main": "./dist/jquery.formstyler.css"
-              }
           }
   }))
   .pipe(cssFilter)
@@ -177,34 +152,10 @@ gulp.task('js:vendor', function() {
               "jquery": {
                   "main": "./dist/jquery.min.js"
               },
-	
-	          "bootstrap": {
-		          "main": './dist/js/bootstrap.min.js'
-	          },
-              
-	          "magnific-popup": {
-                  "main": "./dist/jquery.magnific-popup.min.js"
-              },
-
-             "slick-carousel": {
+              "slick-carousel": {
                   "main": "./slick/slick.min.js"
               },
-	
-	          "bxslider-4": {
-		          "main": './dist/jquery.bxslider.min.js'
-	          },
 
-              "jquery.maskedinput": {
-                  "main": "./dist/jquery.maskedinput.min.js"
-              },
-
-              "jquery.form-styler": {
-                  "main": "./dist/jquery.formstyler.min.js"
-              },
-
-              "readmore-js": {
-                  "main": "./readmore.js"
-              }
           }
   }))
       .pipe(jsFilter)
@@ -310,22 +261,11 @@ gulp.task('html', function() {
         .pipe(connect.reload())
 });
 
-gulp.task('pug', function() {
-    gulp.src(src.pug)
-        .pipe(rigger())
-        .pipe(pug({
-            pretty: '\t'
-        }))
-        .pipe(gulp.dest(outputDir))
-        .pipe(connect.reload())
-
-});
-
 // Watch for changes in /src directories
 gulp.task('watch', function() {
     gulp.watch(src.js, ['js']);
     gulp.watch('./src/sass/*.scss', ['styles']);
-    gulp.watch('./src/**/*.pug', ['pug']);
+    gulp.watch('./src/**/*.html', ['html']);
     gulp.watch(src.images, ['images']);
     gulp.watch(src.fonts, ['fonts']);
 });
@@ -334,7 +274,7 @@ gulp.task('watch', function() {
 
 // ~Build tasks~
 //Build dev version
-gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'pug']);
+gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'html']);
 
 // Build and run dev environment
 gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch']);

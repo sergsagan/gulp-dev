@@ -13,12 +13,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.3",
-    "bootstrap": "~3.3.7",
-    "magnific-popup": "~1.1.0",
     "normalize.css": "~3.0.2",
-    "slick-carousel": "~1.5.9",
-    "readmore-js": "^2.2.0",
-    "ionrangeslider":"~2.1.6",
-    "jquery.form-styler":"~2.0.0"
+    "slick-carousel": "~1.5.9"
   }
 }

@@ -38,8 +38,5 @@
     "imagemin-pngquant": "^5.0.0",
     "main-bower-files": "^2.13.1",
     "opn": "^4.0.2"
-  },
-  "dependencies": {
-    "gulp-pug": "^4.0.1"
   }
 }
