@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__link {
+    display: block;
+    margin-bottom: 20px;
+
+    color: $stack-color;
+    font-family: $Montserrat;
+    font-size: 56px;
+    font-weight: 800;
+
+    text-decoration: none;
+  }
+}
