@@ -1,0 +1,33 @@
+.section-design {
+  position: relative;
+  height: 100vh;
+
+  &:after, &:before {
+    content: '';
+
+    display: block;
+    width: 40px;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+
+    background-image: url('../img/pitch-icon.png');
+    background-repeat: repeat-y;
+  }
+
+  &:after {
+    left: 50px;
+  }
+
+  &:before {
+    right: 50px;
+  }
+
+  &__container {
+    width: 100%;
+    max-height: 1440px;
+    height: auto;
+    margin: 0 auto;
+  }
+}

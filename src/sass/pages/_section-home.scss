@@ -50,9 +50,13 @@
   }
   
   &__right-side {
+    display: flex;
+    align-items: flex-end;
+
     width: 50%;
     max-width: 960px;
     height: 100vh;
+    padding-bottom: 110px;
 
     position: relative;
     overflow: hidden;
@@ -100,7 +104,6 @@
   }
 
   &__nav {
-    margin-top: 330px;
     margin-left: 130px;
   }
 
