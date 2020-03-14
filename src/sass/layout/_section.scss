@@ -4,4 +4,32 @@
   height: auto;
 
   position: relative;
+
+  &__title {
+    position: relative;
+    color: $accent-color;
+    font-family: $Montserrat;
+    font-size: 76px;
+    font-weight: 800;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 51px;
+
+      position: absolute;
+      top: 51px;
+      right: -85px;
+      background-image: url('../img/arrow.png');
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    margin: 0 auto;
+  }
 }

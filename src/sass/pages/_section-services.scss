@@ -1,0 +1,17 @@
+.section-services {
+  height: 100%;
+  padding: 65px 0;
+
+  &__title {
+    max-width: 283px;
+
+    &.viewport {
+      position: fixed;
+      top: 50px;
+    }
+  }
+
+  &__steps {
+    margin-left: 130px;
+  }
+}
