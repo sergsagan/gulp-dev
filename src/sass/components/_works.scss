@@ -1,0 +1,116 @@
+.works {
+  &__item {
+    width: 100%;
+    max-width: 486px;
+    height: auto;
+    max-height: 274px;
+
+    position: relative;
+
+    &--first {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &--second {
+      position: absolute;
+      top: -80px;
+      left: 483px;
+
+      .works__title {
+        max-width: 275px;
+      }
+    }
+    &--third {
+      position: absolute;
+      top: 70px;
+      right: -14px;
+
+      .works__title {
+        max-width: 215px;
+        margin-bottom: 30px;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 43px;
+          height: 37px;
+
+          position: absolute;
+          top: 25px;
+          right: 0;
+          background-image: url('../img/arrow-down.png');
+          background-repeat: no-repeat;
+        }
+      }
+      .works__container {
+        top: auto;
+        bottom: -105px;
+      }
+    }
+    &--fourth {
+      position: absolute;
+      top: 295px;
+      right: 469px;
+
+      .works__title {
+        max-width: 230px;
+        margin: 0 auto 30px;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 43px;
+          height: 37px;
+
+          position: absolute;
+          top: 25px;
+          right: 0;
+          background-image: url('../img/arrow-down.png');
+          background-repeat: no-repeat;
+        }
+      }
+      .works__container {
+        top: auto;
+        bottom: -105px;
+      }
+    }
+  }
+  &__container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -35px;
+    left: -35px;
+    z-index: -1;
+    border: 2px solid $stack-color;
+  }
+
+  video {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    max-width: 210px;
+    position: relative;
+
+    color: $accent-color;
+    font-family: $Montserrat;
+    font-size: 38px;
+    font-weight: 800;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 43px;
+      height: 37px;
+
+      position: absolute;
+      top: -8px;
+      right: 0;
+      background-image: url('../img/arrow-up.png');
+      background-repeat: no-repeat;
+    }
+  }
+}
