@@ -1,0 +1,26 @@
+.section-smm {
+  height: 100vh;
+  padding: 100px 0;
+
+  &:before {
+    content: '';
+
+    display: block;
+    width: 1918px;
+    height: 100%;
+
+    position: absolute;
+    top: 62px;
+    left: 0;
+    z-index: -2;
+
+    background-image: url('../img/lines-smm.png');
+    background-repeat: no-repeat;
+  }
+
+  .section__title {
+    &:before {
+      display: none;
+    }
+  }
+}
