@@ -1,6 +1,7 @@
 .section-works {
-  height: 100vh;
+  height: 100%;
   padding: 30px 0;
+  overflow: hidden;
 
   &:after {
     content: '';
@@ -29,7 +30,7 @@
     height: 1036px;
 
     position: absolute;
-    top: 200px;
+    top: 270px;
     right: 0;
     z-index: -2;
 
@@ -66,7 +67,7 @@
 
     &:after {
       top: -105px;
-      left: 346px;
+      left: 390px;
       background-image: url('../img/pitch-icon.png');
     }
 

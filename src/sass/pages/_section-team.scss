@@ -1,0 +1,57 @@
+.section-team {
+    height: 100%;
+    padding: 100px 0;
+
+    &:before {
+        content: '';
+
+        display: block;
+        width: 1092px;
+        height: 1081px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -2;
+
+        background-image: url('../img/horizontal-lines-long.png');
+        background-repeat: no-repeat;
+    }
+
+    .section__title {
+        margin-bottom: 60px;
+        
+        &:before {
+            display: none;
+        }
+    }
+
+    .team {
+        display: flex;
+        flex-direction: column;
+
+        &__row {
+          display: flex;
+          justify-content: space-between;
+
+          &--second {
+              .team__employee {
+                  margin-left: 110px;
+
+                  &:nth-child(3n) {
+                      margin-right: -110px;
+                  }
+              }
+          }
+        }
+
+        &__employee {
+            max-width: 370px;
+            margin-bottom: 40px;
+
+            &:nth-child(3n) {
+                margin-top: -65px;
+            }
+        }
+    }
+}

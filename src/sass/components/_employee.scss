@@ -1,0 +1,58 @@
+.employee {
+  display: flex;
+  flex-direction: column;
+
+  &__info {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  &__position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    transform: rotate(90deg);
+
+    .line {
+      width: 225px;
+      height: 5px;
+      margin-bottom: 40px;
+
+      border-radius: 10px;
+      background: $stack-color;
+    }
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: -16px;
+
+      color: $dark-color;
+      font-family: $Montserrat;
+      font-size: 27px;
+      font-weight: 800;
+      text-align: center;
+      z-index: 1;
+    }
+  }
+
+  &__name {
+    margin-bottom: 20px;
+
+    color: #000000;
+    font-family: $Montserrat;
+    font-size: 27px;
+    font-weight: 800;
+  }
+
+  &__about {
+    color: $dark-color;
+    font-family: $Montserrat;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
