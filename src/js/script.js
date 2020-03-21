@@ -12,4 +12,17 @@ $(function() {
         autoplaySpeed: 3000,
     });
 
+    $("#feadback-form").submit(function() {
+        $.ajax({
+            type: "POST",
+            url: "mail.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $('#feadback-form')[0].reset(
+                setTimeout(function () {}, 1000)
+            );
+        });
+        return false;
+    });
+
 });

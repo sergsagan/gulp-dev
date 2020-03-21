@@ -1,3 +1,15 @@
-btn{
-display: block;
+.btn{
+  width: 100%;
+  height: 60px;
+  padding: 0 24px;
+
+
+  color: $base-color;
+  font-family: $Montserrat;
+  font-size: 38px;
+  font-weight: 800;
+
+  border: 2px solid $base-color;
+  background-color: transparent;
+  line-height: 56px;
 }

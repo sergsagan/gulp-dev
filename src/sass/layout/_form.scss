@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  max-width: 603px;
+  height: 100%;
+  max-height: 407px;
+
+  z-index: 100;
+
+  &__input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    padding: 0 24px;
+
+
+    color: $base-color;
+    font-family: $Montserrat;
+    font-size: 38px;
+    font-weight: 800;
+
+    border: 2px solid $base-color;
+    background-color: transparent;
+    line-height: 60px;
+
+    &::placeholder {
+      color: $base-color;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 0 24px;
+
+
+    color: $base-color;
+    font-family: $Montserrat;
+    font-size: 38px;
+    font-weight: 800;
+
+    border: 2px solid $base-color;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $base-color;
+    }
+  }
+
+  &__btn {
+    max-width: 270px;
+  }
+}
+

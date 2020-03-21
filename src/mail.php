@@ -3,11 +3,12 @@
 $recepient = "sergey.martynuk@gmail.com";
 $sitename = "pitch";
 
-$name = trim($_POST["name"]);
-$tel = trim($_POST["tel"]);
+
 $email = trim($_POST["email"]);
+$tel = trim($_POST["tel"]);
 $message = trim($_POST["message"]);
-$message = "Имя: $name \nTel: $tel \nEmail: $email \nСообщение: $message";
+$message = "Email: $email \nTel: $tel \nСообщение: $message";
 
 $pagetitle = "Новое сообщение с сайта \"$sitename\"";
 mail($recepient, $pagetitle, $message, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+

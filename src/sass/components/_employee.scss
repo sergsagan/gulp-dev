@@ -43,13 +43,14 @@
   &__name {
     margin-bottom: 20px;
 
-    color: #000000;
+    color: $dark-color;
     font-family: $Montserrat;
     font-size: 27px;
     font-weight: 800;
   }
 
   &__about {
+    max-width: 280px;
     color: $dark-color;
     font-family: $Montserrat;
     font-size: 13px;
