@@ -10,63 +10,322 @@
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-
-}
-
-@media only screen and (max-width: 1024px) {
-
-}
-
-@media only screen and (max-width: 1368px) {
   .wrapper {
+    .section {
+      &__title {
+        font-size: 30px;
+
+        &:before {
+          top: 15px;
+          background-size: 45%;
+        }
+      }
+    }
     .section-home {
       &__title {
-        width: 430px;
-        font-size: 80px;
+        width: 300px;
+        font-size: 55px;
       }
       &__top-lines {
-        max-width: 575px;
+        max-width: 350px;
       }
       &__bottom-lines {
-        max-width: 575px;
+        max-width: 350px;
       }
-      &__vertical-lines {
-        right: 40px;
-      }
-      &__vertical-lines:before {
-        right: 40px;
-      }
-      &__vertical-lines:after {
-        right: 80px;
+      &__right-side {
+        background-position: 30px 90px;
       }
       &__nav {
-        margin-top: 290px;
-      }
-    }
-    .navigation__link {
-      font-size: 45px;
-    }
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-  .wrapper {
-    .section-home {
-      &__top-lines {
-        max-width: 650px;
-      }
-      &__bottom-lines {
-        max-width: 650px;
+        margin-left: 45px;
       }
     }
     .navigation__link {
       margin-bottom: 15px;
-      font-size: 50px;
+      font-size: 30px;
+    }
+    .section-design {
+      &__description {
+        max-width: 200px;
+        font-size: 13px;
+      }
+    }
+    .section-services {
+      &__title {
+        max-width: 116px;
+        &:before {
+          right: -106px;
+        }
+      }
+      &__steps {
+        margin-left: 30px;
+      }
+    }
+    .services-steps .step__number {
+      font-size: 120px;
+    }
+    .services-steps .step__name {
+      margin-bottom: 50px;
+      font-size: 45px;
+    }
+    .services-steps .step__description {
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 25px;
+    }
+    .services-steps__line {
+      left: 150px;
+    }
+    .services-steps .step-2 .line-2 {
+      left: 170px;
+    }
+    .services-steps .step-3 .line-2 {
+      left: 170px;
+    }
+    .services-steps .step-3 .line-3 {
+      left: 190px;
+    }
+    .services-steps .step-4 .line-2 {
+      left: 170px;
+    }
+    .services-steps .step-4 .line-3 {
+      left: 190px;
+    }
+    .services-steps .step-4 .line-4 {
+      left: 210px;
+    }
+    .services-steps .step__info {
+      max-width: 345px;
     }
   }
 }
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+  .wrapper {
+    .section {
+      &__title {
+        font-size: 35px;
+
+        &:before {
+          top: 20px;
+          background-size: 55%;
+        }
+      }
+    }
+    .section-home {
+      &__title {
+        width: 350px;
+        font-size: 65px;
+      }
+      &__top-lines {
+        max-width: 450px;
+      }
+      &__bottom-lines {
+        max-width: 450px;
+      }
+      &__right-side {
+        background-position: 30px 90px;
+      }
+      &__nav {
+        margin-left: 45px;
+      }
+    }
+    .navigation__link {
+      margin-bottom: 15px;
+      font-size: 40px;
+    }
+    .section-design {
+      &__description {
+        max-width: 300px;
+        font-size: 14px;
+      }
+    }
+    .section-services {
+      &__title {
+        max-width: 248px;
+        &:before {
+          right: -106px;
+        }
+      }
+      &__steps {
+        margin-left: 65px;
+      }
+    }
+    .services-steps .step__number {
+      font-size: 120px;
+    }
+    .services-steps .step__name {
+      margin-bottom: 50px;
+      font-size: 45px;
+    }
+    .services-steps .step__description {
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1368px) {
+  .wrapper {
+    .section {
+      &__title {
+        font-size: 45px;
+
+        &:before {
+          top: 30px;
+          background-size: 75%;
+        }
+      }
+    }
+    .section-home {
+      &__title {
+        width: 350px;
+        font-size: 65px;
+      }
+      &__top-lines {
+        max-width: 520px;
+      }
+      &__bottom-lines {
+        max-width: 520px;
+      }
+      &__right-side {
+        background-position: 30px 90px;
+      }
+      &__nav {
+        margin-left: 45px;
+      }
+    }
+    .navigation__link {
+      margin-bottom: 15px;
+      font-size: 40px;
+    }
+    .section-design {
+      &__description {
+        max-width: 320px;
+        font-size: 15px;
+      }
+    }
+    .section-services {
+      &__title {
+        &:before {
+          right: -96px;
+        }
+      }
+    }
+    .services-steps .step__number {
+      font-size: 120px;
+    }
+    .services-steps .step__name {
+      margin-bottom: 50px;
+      font-size: 55px;
+    }
+    .services-steps .step__description {
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1369px) and (max-width: 1440px) {
+  .wrapper {
+    .section {
+      &__title {
+        font-size: 55px;
+
+        &:before {
+          top: 35px;
+          background-size: 75%;
+        }
+      }
+    }
+    .section-home {
+      &__title {
+        width: 450px;
+        font-size: 75px;
+      }
+      &__top-lines {
+        max-width: 590px;
+      }
+      &__bottom-lines {
+        max-width: 590px;
+      }
+      &__right-side {
+        background-position: 30px 100px;
+      }
+      &__nav {
+        margin-left: 45px;
+      }
+    }
+    .navigation__link {
+      margin-bottom: 15px;
+      font-size: 45px;
+    }
+    .section-design {
+      &__description {
+        font-size: 16px;
+      }
+    }
+    .section-services {
+      &__title {
+        &:before {
+          right: -96px;
+        }
+      }
+    }
+    .services-steps .step__number {
+      font-size: 130px;
+    }
+    .services-steps .step__name {
+      margin-bottom: 70px;
+      font-size: 65px;
+    }
+    .services-steps .step__description {
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1441px) and (max-width: 1600px) {
+  .wrapper {
+    .section {
+      &__title {
+        font-size: 65px;
+        &:before {
+          background-size: 75%;
+        }
+      }
+    }
+    .section-home {
+      &__right-side {
+        background-position: 75px 80px;
+      }
+      &__nav {
+        margin-left: 85px;
+      }
+    }
+    .navigation__link {
+      margin-bottom: 15px;
+      font-size: 48px;
+    }
+    .section-design {
+      &__description {
+        font-size: 17px;
+      }
+    }
+    .section-services {
+      &__title {
+        &:before {
+          right: -96px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1601px) and (max-width: 1800px) {
   .wrapper {
     .section-home {
       &__right-side {
@@ -75,6 +334,53 @@
       &__nav {
         margin-left: 45px;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .wrapper {
+    .section {
+      &__container {
+        max-width: 100%;
+      }
+    }
+    .section-home {
+      &__vertical-lines {
+        right: 25px;
+
+        &:before {
+          right: 25px;
+        }
+
+        &:after {
+          right: 50px;
+        }
+      }
+    }
+    .section-design {
+      padding: 50px 100px;
+
+      &:after, &:before {
+        max-height: 100%;
+      }
+      &:after {
+        left: 25px;
+      }
+      &:before {
+        right: 25px;
+      }
+
+      &__wrap {
+        margin-bottom: 50px;
+        padding: 0 50px 0 0;
+      }
+    }
+    .section-services {
+      padding: 50px 100px;
+    }
+    .section-works {
+      padding: 50px 100px;
     }
   }
 }
