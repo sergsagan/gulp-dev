@@ -157,12 +157,9 @@
       }
     }
     .section-contacts {
-      &__info {
-        padding-bottom: 0;
-      }
       .contacts {
-        margin-left: 10px;
-        margin-right: 10px;
+        max-height: 370px;
+        max-width: 364px;
 
         &__or-empty {
           width: 200px;
@@ -174,11 +171,11 @@
         }
 
         &__phone {
-          right: 0;
+          left: 210px;
         }
 
         &__email {
-          bottom: 286px;
+          bottom: 0;
           left: 80px;
         }
 
@@ -346,12 +343,9 @@
       }
     }
     .section-contacts {
-      &__info {
-        padding-bottom: 0;
-      }
       .contacts {
-        margin-left: 15px;
-        margin-right: 40px;
+        max-width: 460px;
+        max-height: 400px;
 
         &__or-empty {
           width: 250px;
@@ -362,9 +356,13 @@
           height: 250px;
         }
 
+        &__phone {
+          left: 280px;
+        }
+
         &__email {
-          bottom: 240px;
-          left: 110px;
+          bottom: 0;
+          left: 100px;
         }
 
         .email {
@@ -537,13 +535,9 @@
     }
 
     .section-contacts {
-      &__info {
-        padding-bottom: 10px;
-      }
-
       .contacts {
-        margin-left: 15px;
-        margin-right: 50px;
+        max-width: 470px;
+        max-height: 400px;
 
         &__or-empty {
           width: 250px;
@@ -554,8 +548,12 @@
           height: 250px;
         }
 
+        &__phone {
+          left: 280px;
+        }
+
         &__email {
-          bottom: 240px;
+          bottom: 0;
           left: 110px;
         }
 
@@ -675,8 +673,48 @@
     }
     .section-contacts {
       .contacts {
-        margin-left: 25px;
-        margin-right: 50px;
+        max-width: 545px;
+        max-height: 460px;
+
+        &__or-empty {
+          width: 300px;
+        }
+
+        &__or-full {
+          top: 100px;
+          height: 300px;
+        }
+
+        &__phone {
+          left: 330px;
+        }
+
+        &__email {
+          bottom: 15px;
+          left: 110px;
+        }
+
+        .email {
+          margin-bottom: 20px;
+          font-size: 30px;
+
+          &__title {
+            margin-bottom: 20px;
+            font-size: 30px;
+          }
+        }
+
+        .phone {
+          font-size: 30px;
+
+          &__title {
+            margin-bottom: 20px;
+          }
+
+          &__tel {
+            margin-bottom: 20px;
+          }
+        }
       }
     }
   }
@@ -853,6 +891,11 @@
     }
     .section-team {
       padding: 50px 100px;
+    }
+    .section-contacts {
+      .contacts {
+        margin-left: 0;
+      }
     }
   }
 }
