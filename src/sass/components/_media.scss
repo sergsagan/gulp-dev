@@ -60,41 +60,43 @@
         margin-left: 30px;
       }
     }
-    .services-steps .step__number {
-      font-size: 120px;
-    }
-    .services-steps .step__name {
-      margin-bottom: 50px;
-      font-size: 45px;
-    }
-    .services-steps .step__description {
-      margin-bottom: 20px;
-      font-size: 15px;
-      line-height: 25px;
-    }
-    .services-steps__line {
-      left: 150px;
-    }
-    .services-steps .step-2 .line-2 {
-      left: 170px;
-    }
-    .services-steps .step-3 .line-2 {
-      left: 170px;
-    }
-    .services-steps .step-3 .line-3 {
-      left: 190px;
-    }
-    .services-steps .step-4 .line-2 {
-      left: 170px;
-    }
-    .services-steps .step-4 .line-3 {
-      left: 190px;
-    }
-    .services-steps .step-4 .line-4 {
-      left: 210px;
-    }
-    .services-steps .step__info {
-      max-width: 345px;
+    .services-steps {
+      &__line {
+        left: 150px;
+      }
+      .step-3 .line-2 {
+        left: 170px;
+      }
+      .step-2 .line-2 {
+        left: 170px;
+      }
+      .step-3 .line-3 {
+        left: 190px;
+      }
+      .step-4 .line-2 {
+        left: 170px;
+      }
+      .step-4 .line-3 {
+        left: 190px;
+      }
+      .step-4 .line-4 {
+        left: 210px;
+      }
+      .step__info {
+        max-width: 345px;
+      }
+      .step__number {
+        font-size: 120px;
+      }
+      .step__name {
+        margin-bottom: 50px;
+        font-size: 45px;
+      }
+      .step__description {
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 25px;
+      }
     }
     .section-works {
       .works__item {
@@ -157,6 +159,9 @@
       }
     }
     .section-contacts {
+      .section__title {
+        margin: 80px auto 200px;
+      }
       .contacts {
         max-height: 370px;
         max-width: 364px;
@@ -503,11 +508,9 @@
         }
       }
     }
-
     .section-smm:before {
       top: 370px;
     }
-
     .slider {
       margin: 0 auto;
 
@@ -529,11 +532,11 @@
         margin-bottom: 50px;
       }
     }
-
-    .section-team:before {
-      right: 0;
+    .section-team {
+      .team__row--second .team__employee {
+        margin-left: 32px;
+      }
     }
-
     .section-contacts {
       .contacts {
         max-width: 470px;
@@ -588,7 +591,6 @@
         }
       }
     }
-
     .section-works__list {
       margin: 85px auto 0;
       max-width: 930px;
@@ -642,17 +644,19 @@
         }
       }
     }
-    .services-steps .step__number {
-      font-size: 130px;
-    }
-    .services-steps .step__name {
-      margin-bottom: 70px;
-      font-size: 65px;
-    }
-    .services-steps .step__description {
-      margin-bottom: 25px;
-      font-size: 16px;
-      line-height: 25px;
+    .services-steps {
+      .step__number {
+        font-size: 130px;
+      }
+      .step__name {
+        margin-bottom: 70px;
+        font-size: 65px;
+      }
+      .step__description {
+        margin-bottom: 25px;
+        font-size: 16px;
+        line-height: 25px;
+      }
     }
     .section-works {
       .works__item {
@@ -669,6 +673,11 @@
           top: 210px;
           right: 370px;
         }
+      }
+    }
+    .section-team {
+      .team__row--second .team__employee {
+        margin-left: 65px;
       }
     }
     .section-contacts {
@@ -792,7 +801,7 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
   .wrapper {
     .section-smm,
     .section-team {
@@ -803,40 +812,13 @@
     .section-team {
       .team {
         flex-direction: initial;
-        justify-content: center;
-
-        &__row {
-          flex-direction: column;
-        }
-
-        &__employee:nth-child(3n) {
-          margin-top: 0;
-        }
-        &__employee {
-          max-width: 250px;
-          margin-bottom: 20px;
-        }
+        justify-content: space-between;
       }
-      .employee__info {
-        margin-bottom: 20px;
-        max-width: 175px;
+      .team__row {
+        flex-direction: column;
       }
-      .employee__position .line {
-        width: 175px;
-        height: 3px;
-        margin-bottom: 25px;
-      }
-      .employee__position .text {
-        margin-top: -12px;
-        font-size: 20px;
-      }
-      .employee__name {
-        margin-bottom: 15px;
-        font-size: 20px;
-      }
-      .employee__about {
-        max-width: 210px;
-        font-size: 12px;
+      .team__employee {
+        min-width: 100%;
       }
     }
   }
@@ -890,7 +872,7 @@
       padding: 50px 100px;
     }
     .section-team {
-      padding: 50px 100px;
+      padding: 75px 100px;
     }
     .section-contacts {
       .contacts {

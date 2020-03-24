@@ -1,6 +1,6 @@
 .section-team {
     height: 100%;
-    padding: 100px 0;
+    padding: 50px 0;
 
     &:before {
         content: '';
@@ -11,15 +11,16 @@
 
         position: absolute;
         top: 0;
-        right: 50px;
+        right: 0;
         z-index: -2;
 
         background-image: url('../img/horizontal-lines-long.png');
         background-repeat: no-repeat;
+        transform: rotate(90deg);
     }
 
     .section__title {
-        margin-bottom: 60px;
+        margin-bottom: 50px;
         
         &:before {
             display: none;
@@ -36,21 +37,21 @@
 
           &--second {
               .team__employee {
-                  margin-left: 110px;
+                  margin-left: 140px;
 
                   &:nth-child(3n) {
-                      margin-right: -110px;
+                      margin-right: -100px;
                   }
               }
           }
         }
 
         &__employee {
-            max-width: 370px;
-            margin-bottom: 40px;
+            min-width: 370px;
+            margin-bottom: 50px;
 
             &:nth-child(3n) {
-                margin-top: -65px;
+                margin-top: -80px;
             }
         }
     }

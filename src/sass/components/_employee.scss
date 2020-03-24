@@ -4,38 +4,39 @@
 
   &__info {
     display: flex;
-    margin-bottom: 40px;
+    width: 100%;
+    max-width: 225px;
+    margin-bottom: 50px;
     position: relative;
   }
 
   &__position {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
 
-    transform: rotate(90deg);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    bottom: 0;
 
     .line {
-      width: 225px;
-      height: 5px;
-      margin-bottom: 40px;
+      display: flex;
+      width: 5px;
+      height: 100%;
+      margin-left: 40px;
 
       border-radius: 10px;
       background: $stack-color;
-    }
-    .text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
-      margin-top: -16px;
+      writing-mode: vertical-lr;
+    }
+    
+    .text {
+      margin: auto -12px;
 
       color: $dark-color;
       font-family: $Montserrat;
       font-size: 27px;
       font-weight: 800;
-      text-align: center;
       z-index: 1;
     }
   }

@@ -89,6 +89,10 @@
     border: 2px solid $stack-color;
   }
 
+  .animated {
+    animation-duration: 2s;
+  }
+
   video {
     width: 100%;
     margin-bottom: 30px;

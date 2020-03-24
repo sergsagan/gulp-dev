@@ -110,6 +110,9 @@ gulp.task('styles:vendor', function() {
               "normalize.css": {
                   "main": "./normalize.css"
               },
+              "animate.css": {
+                  "main": "./animate.css"
+              },
               "slick-carousel": {
                   "main": [
                       "./slick/slick.css",
