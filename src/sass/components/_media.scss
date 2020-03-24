@@ -232,7 +232,7 @@
   .wrapper {
     .section {
       &__title {
-        font-size: 35px;
+        font-size: 38px;
 
         &:before {
           top: 20px;
@@ -351,7 +351,7 @@
       }
       .contacts {
         margin-left: 15px;
-        margin-right: 50px;
+        margin-right: 40px;
 
         &__or-empty {
           width: 250px;
@@ -392,11 +392,20 @@
 
       .form {
         max-width: 420px;
-
         &__input {
           font-size: 25px;
           height: 50px;
           line-height: 50px;
+        }
+        textarea {
+          width: 100%;
+          height: 180px;
+          font-size: 25px;
+        }
+        .btn {
+          height: 50px;
+          font-size: 25px;
+          line-height: 46px;
         }
       }
     }
@@ -468,6 +477,10 @@
         max-height: 180px;
         &--second {
           left: 320px;
+
+          .works__title {
+            width: 190px;
+          }
         }
         &--third {
           top: 40px;
@@ -524,10 +537,10 @@
     }
 
     .section-contacts {
-
       &__info {
-        padding-bottom: 0;
+        padding-bottom: 10px;
       }
+
       .contacts {
         margin-left: 15px;
         margin-right: 50px;
@@ -576,6 +589,11 @@
           font-size: 30px;
         }
       }
+    }
+
+    .section-works__list {
+      margin: 85px auto 0;
+      max-width: 930px;
     }
   }
 }
@@ -756,6 +774,31 @@
         &__employee:nth-child(3n) {
           margin-top: 0;
         }
+        &__employee {
+          max-width: 250px;
+          margin-bottom: 20px;
+        }
+      }
+      .employee__info {
+        margin-bottom: 20px;
+        max-width: 175px;
+      }
+      .employee__position .line {
+        width: 175px;
+        height: 3px;
+        margin-bottom: 25px;
+      }
+      .employee__position .text {
+        margin-top: -12px;
+        font-size: 20px;
+      }
+      .employee__name {
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+      .employee__about {
+        max-width: 210px;
+        font-size: 12px;
       }
     }
   }
@@ -782,7 +825,7 @@
       }
     }
     .section-design {
-      padding: 50px 100px;
+      padding: 75px 100px;
 
       &:after, &:before {
         max-height: 100%;
@@ -803,7 +846,7 @@
       padding: 50px 100px;
     }
     .section-works {
-      padding: 50px 100px;
+      padding: 75px 100px;
     }
     .section-smm {
       padding: 50px 100px;
