@@ -25,7 +25,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <!--<section class="section section-home">
+    <section class="section section-home">
         <div class="section-home__left-side">
             <div class="video__overlay">
                 <div class="section-home__top-lines">
@@ -47,16 +47,16 @@
         <div class="section-home__right-side">
             <div class="section-home__vertical-lines"></div>
             <div class="section-home__nav navigation">
-                <a href="#" id="smm" class="navigation__link">smm</a>
-                <a href="#" id="design" class="navigation__link">design</a>
-                <a href="#" id="branding" class="navigation__link">branding</a>
-                <a href="#" id="production" class="navigation__link">production</a>
-                <a href="#" id="team" class="navigation__link">team</a>
-                <a href="#" id="contact" class="navigation__link">contact</a>
+                <a href="#section-smm" id="smm" class="navigation__link">smm</a>
+                <a href="#section-design" id="design" class="navigation__link">design</a>
+                <a href="#section-branding" id="branding" class="navigation__link">branding</a>
+                <a href="#section-production" id="production" class="navigation__link">production</a>
+                <a href="#section-team" id="team" class="navigation__link">team</a>
+                <a href="#section-contact" id="contact" class="navigation__link">contact</a>
             </div>
         </div>
     </section>
-    <section class="section section-design">
+    <section id="section-design" class="section section-design">
         <div class="section__container">
             <div class="section-design__wrap">
                 <div class="section-design__title section__title">это Pitch</div>
@@ -68,11 +68,11 @@
             </video>
         </div>
     </section>
-    <section class="section section-services">
+    <section id="section-branding" class="section section-services">
         <div class="section__container">
             <div class="section-services__title section__title">услуги</div>
-            <div class="section-services__steps services-steps">
-                <div class="step step-1 viewport">
+            <div id="services-steps" class="section-services__steps services-steps">
+                <div class="step step-1">
                     <span class="services-steps__line"></span>
                     <span class="step__number">01</span>
                     <div class="step__info">
@@ -85,7 +85,7 @@
                          <img src="../img/smm-brand.png" alt="image" class="step__brand">
                      </div>
                 </div>
-                <div class="step step-2 viewport">
+                <div class="step step-2">
                     <span class="services-steps__line"></span>
                     <span class="line-2"></span>
                     <span class="step__number">02</span>
@@ -99,7 +99,7 @@
                         <img src="../img/design-brand.png" alt="image" class="step__brand">
                     </div>
                 </div>
-                <div class="step step-3 viewport">
+                <div class="step step-3">
                     <span class="services-steps__line"></span>
                     <span class="line-2"></span>
                     <span class="line-3"></span>
@@ -114,7 +114,7 @@
                         <img src="../img/branding-brand.png" alt="image" class="step__brand">
                     </div>
                 </div>
-                <div class="step step-4 viewport">
+                <div class="step step-4">
                     <span class="services-steps__line"></span>
                     <span class="line-2"></span>
                     <span class="line-3"></span>
@@ -132,20 +132,20 @@
                 </div>
             </div>
         </div>
-    </section>-->
-    <section class="section section-works">
+    </section>
+    <section id="section-production" class="section section-works">
         <div class="section-works__container section__container">
             <div class="section-works__title section__title">работы</div>
              <div class="section-works__list works">
                  <div class="works__item works__item--first">
-                    <div class="works__container animated infinite tada"></div>
+                    <div class="works__container animated infinite shake"></div>
                      <video controls loop muted name="media">
                          <source src="../img/media/rain.mp4" type="video/mp4">
                      </video>
                      <div class="works__title">левбуд</div>
                  </div>
                  <div class="works__item works__item--second">
-                     <div class="works__container animated infinite tada delay-1s"></div>
+                     <div class="works__container animated infinite shake delay-1s"></div>
                      <video controls loop muted name="media">
                          <source src="../img/media/rain.mp4" type="video/mp4">
                      </video>
@@ -153,14 +153,14 @@
                  </div>
                  <div class="works__item works__item--third">
                      <div class="works__title">ин хаус</div>
-                     <div class="works__container animated infinite tada delay-2s "></div>
+                     <div class="works__container animated infinite shake delay-1.5s"></div>
                      <video controls loop muted name="media">
                          <source src="../img/media/rain.mp4" type="video/mp4">
                      </video>
                  </div>
                  <div class="works__item works__item--fourth">
                      <div class="works__title">евротур</div>
-                     <div class="works__container animated infinite tada delay-3s"></div>
+                     <div class="works__container animated infinite shake delay-2s"></div>
                      <video controls loop muted name="media">
                          <source src="../img/media/rain.mp4" type="video/mp4">
                      </video>
@@ -168,7 +168,7 @@
              </div>
         </div>
     </section>
-    <!--<section class="section section-smm">
+    <section id="section-smm" class="section section-smm">
         <div class="section__container">
             <div class="section__title">smm</div>
             <div class="slider">
@@ -214,7 +214,7 @@
             </div>
         </div>
     </section>
-    <section class="section section-team">
+    <section id="section-team" class="section section-team">
        <div class="section__container">
            <div class="section__title">команда</div>
            <div class="team">
@@ -262,7 +262,7 @@
                        </div>
                    </div>
                </div>
-               <div class="team__row team__row&#45;&#45;second">
+               <div class="team__row team__row--second">
                    <div class="team__employee employee">
                        <div class="employee__info">
                            <img src="../img/team/photo-gleb.png" alt="photo" class="employee__photo">
@@ -306,11 +306,11 @@
            </div>
        </div>
     </section>
-    <section class="section section-contacts">
+    <section id="section-contact" class="section section-contacts">
         <div class="section-contacts__form">
             <div class="video__overlay">
                 <div class="section__title">контакты</div>
-                <form id="feadback-form" class="form feedback-form">
+                <form id="form" class="form feedback-form">
                     <input class="form__input form__input-mail" type="email" name="email" placeholder="e-mail" required>
                     <input class="form__input form__input-phone" type="tel" name="tel" minlength="10" maxlength="10" placeholder="телефон">
                     <textarea name="message" placeholder="ваш вопрос"></textarea>
@@ -339,7 +339,7 @@
                 </div>
             </div>
         </div>
-    </section>-->
+    </section>
 </div>
 </body>
 <script defer src="js/vendor.js"></script>
