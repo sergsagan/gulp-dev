@@ -39,32 +39,6 @@ function isPartiallyVisible(el) {
     return ((top + height >= 0) && (height + window.innerHeight >= bottom));
 }
 
-$(function() {
-
-    $('.slider').slick({
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        arrows: false,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-    });
-
-    $("#form").submit(function() {
-        $.ajax({
-            type: "POST",
-            url: "mail.php",
-            data: $(this).serialize()
-        }).done(function() {
-            $('#form')[0].reset(
-                setTimeout(function () {}, 1000)
-            );
-        });
-        return false;
-    });
-});
-
 let smm = document.getElementById('smm');
 let design = document.getElementById('design');
 let branding = document.getElementById('branding');
@@ -127,4 +101,30 @@ for (let anchor of anchors) {
             block: 'start'
         });
     })
-};
+}
+
+$(function() {
+
+    $('.slider').slick({
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        arrows: false,
+        dots: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
+    });
+
+    $("#form").submit(function() {
+        $.ajax({
+            type: "POST",
+            url: "mail.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $('#form')[0].reset(
+                setTimeout(function () {}, 1000)
+            );
+        });
+        return false;
+    });
+});
