@@ -475,6 +475,10 @@
       line-height: 25px;
     }
     .section-works {
+      &__list {
+        margin: 85px auto 0;
+        max-width: 930px;
+      }
       .works__item {
         max-width: 320px;
         max-height: 180px;
@@ -591,10 +595,6 @@
         }
       }
     }
-    .section-works__list {
-      margin: 85px auto 0;
-      max-width: 930px;
-    }
   }
 }
 
@@ -659,6 +659,10 @@
       }
     }
     .section-works {
+      &__list {
+        margin: 85px auto 0;
+        max-width: 1170px;
+      }
       .works__item {
         max-width: 400px;
         max-height: 226px;
@@ -764,6 +768,10 @@
       }
     }
     .section-works {
+      &__list {
+        margin: 85px auto 0;
+        max-width: 1245px;
+      }
       .works__item {
         max-width: 400px;
         max-height: 226px;
@@ -794,6 +802,10 @@
       }
     }
     .section-works {
+      &__list {
+        margin: 85px auto 0;
+        max-width: 1440px;
+      }
       &__container {
         max-width: 1440px;
       }
