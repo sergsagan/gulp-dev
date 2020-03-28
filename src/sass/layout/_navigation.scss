@@ -13,5 +13,10 @@
     font-weight: 800;
 
     text-decoration: none;
+
+    &:hover {
+      -webkit-text-stroke: 2px rgba(144, 150, 92, 1);
+      -webkit-text-fill-color: white;
+    }
   }
 }
