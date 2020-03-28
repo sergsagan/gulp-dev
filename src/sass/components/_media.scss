@@ -5,8 +5,347 @@
 
 }
 
-@media only screen and (min-width: 601px) and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    .section__title {
+      font-size: 35px;
+      margin-left: 50px;
+    }
 
+    .section-home {
+      flex-direction: column;
+
+      &__left-side {
+        width: 100%;
+        max-width: 768px;
+        height: 500px;
+      }
+
+      &__right-side {
+        width: 100%;
+        max-width: 768px;
+        height: auto;
+        min-height: 450px;
+        padding-bottom: 0;;
+        background-position: 80px 30px;
+      }
+
+      &__title {
+        width: 325px;
+        margin: 35px auto;
+        font-size: 60px;
+      }
+
+      &__top-lines {
+        max-width: 70%;
+
+        span {
+          margin-bottom: 15px;
+        }
+      }
+
+      &__bottom-lines {
+        max-width: 70%;
+
+        span {
+          margin-bottom: 30px;
+        }
+      }
+
+      &__nav {
+        margin-left: 30px;
+      }
+
+      .navigation__link {
+        margin-bottom: 10px;
+        font-size: 38px;
+      }
+    }
+
+    .section-design {
+      padding: 25px 10px !important;
+
+      .section__title:before {
+        top: 26px;
+        right: -70px;
+        background-size: 60%;
+      }
+
+      &__description {
+        max-width: 230px;
+        font-size: 16px;
+      }
+
+      &__wrap {
+        margin-bottom: 25px !important;
+        padding: 0 65px 0 0 !important;
+      }
+    }
+
+    .section-services {
+      padding: 25px 10px !important;
+
+      &__title {
+        max-width: 146px;
+
+        &:before {
+          top: 20px;
+          background-size: 60%;
+        }
+      }
+
+      &__steps {
+        margin-left: 10%;
+      }
+
+      .services-steps {
+        &__line {
+          left: 23%;
+        }
+
+        .step__name {
+          margin-bottom: 40px;
+          font-size: 40px;
+        }
+
+        .step__description {
+          margin-bottom: 25px;
+
+          font-size: 15px;
+          line-height: 25px;
+        }
+
+        .step__info {
+          max-width: 330px;
+          margin-left: 0;
+          top: 40px;
+          left: 31%;
+        }
+
+        .step__number {
+          top: 50px;
+          font-size: 125px;
+        }
+
+        .step-2 .line-2 {
+          left: 25%;
+        }
+
+        .step-3 .line-2 {
+          left: 25%;
+        }
+
+        .step-3 .line-3 {
+          left: 27%;
+        }
+
+        .step-4 .line-2 {
+          left: 25%;
+        }
+
+        .step-4 .line-3 {
+          left: 27%;
+        }
+
+        .step-4 .line-4 {
+          left: 29%;
+        }
+      }
+    }
+
+    .section-works {
+      padding: 55px 10px !important;
+
+      &__container {
+        height: 100%;
+
+        &:after {
+          top: -50px;
+          left: 0;
+        }
+
+        &:before {
+          top: -85px;
+          right: 0;
+        }
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .works__item {
+        margin-bottom: 100px;
+      }
+
+      .works__item--first {
+        position: relative;
+      }
+
+      .works__item--second {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        .works__title {
+          max-width: 210px;
+        }
+      }
+
+      .works__item--third {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        .works__container {
+          bottom: -75px;
+        }
+
+        .works__title {
+          margin-bottom: 15px;
+        }
+      }
+
+      .works__item--fourth {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        .works__container {
+          bottom: -75px;
+        }
+
+        .works__title {
+          margin: 0 0 15px 0;
+        }
+      }
+
+      .works__title {
+        max-width: 170px;
+        font-size: 28px;
+
+        &:before {
+          background-size: 70%;
+        }
+      }
+
+      .works video {
+        margin-bottom: 15px;
+      }
+    }
+
+    .section-smm {
+      padding: 50px 10px !important;
+
+      .slider {
+        width: 100%;
+        margin: 0 auto;
+
+        &__title {
+          font-size: 30px;
+          margin-left: 50px;
+        }
+
+        &__date {
+          max-width: 100px;
+        }
+
+        &__line {
+          margin-bottom: 35px;
+        }
+
+        &__image {
+          margin-bottom: 35px;
+        }
+
+        &__text {
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+    }
+
+    .section-team {
+      padding: 50px 10px !important;
+
+      .employee__info {
+        max-width: 200px;
+      }
+    }
+
+    .section-contacts {
+      .contacts {
+        max-height: 370px;
+        max-width: 360px;
+
+        &__or-empty {
+          width: 190px;
+        }
+
+        &__or-full {
+          top: 100px;
+          height: 190px;
+        }
+
+        &__phone {
+          left: 200px;
+        }
+
+        &__email {
+          bottom: 0;
+          left: 80px;
+        }
+
+        .email {
+          margin-bottom: 15px;
+          font-size: 22px;
+
+          &__title {
+            margin-bottom: 15px;
+            font-size: 25px;
+          }
+        }
+
+        .phone {
+          font-size: 22px;
+
+          &__title {
+            margin-bottom: 15px;
+          }
+
+          &__tel {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      .form {
+        max-width: 350px;
+
+        &__input {
+          font-size: 22px;
+          height: 50px;
+          line-height: 50px;
+        }
+
+        textarea {
+          font-size: 22px;
+          height: 130px;
+        }
+
+        &__btn {
+          font-size: 22px;
+          height: 50px;
+          line-height: 48px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
@@ -84,6 +423,8 @@
       }
       .step__info {
         max-width: 345px;
+        margin-left: 0;
+        left: 30%;
       }
       .step__number {
         font-size: 120px;
@@ -160,7 +501,7 @@
     }
     .section-contacts {
       .section__title {
-        margin: 80px auto 200px;
+        margin: 80px auto 80px;
       }
       .contacts {
         max-height: 370px;
@@ -542,6 +883,12 @@
       }
     }
     .section-contacts {
+      .section__title {
+        margin: 60px auto 100px;
+      }
+      .video__overlay:before {
+        top: 20%;
+      }
       .contacts {
         max-width: 470px;
         max-height: 400px;
@@ -586,7 +933,6 @@
           }
         }
       }
-
       .form {
         max-width: 480px;
 

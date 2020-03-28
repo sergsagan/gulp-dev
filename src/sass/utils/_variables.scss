@@ -7,6 +7,11 @@ $base-color: rgb(255, 255, 255);
 //Font-Family
 $Montserrat: 'Montserrat', sans-serif;
 
+//rem
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}
+
 //breakpoints
 $breakpoints: (
         'xs': (max-width: 480px),
