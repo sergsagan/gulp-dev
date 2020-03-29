@@ -944,6 +944,16 @@
       .team__row--second .team__employee {
         margin-left: 32px;
       }
+      .employee__info {
+        max-width: 190px;
+      }
+      .employee__name {
+        margin-bottom: 15px;
+        font-size: 25px;
+      }
+      .employee__position .text {
+        font-size: 25px;
+      }
     }
     .section-contacts {
       .section__title {
@@ -1231,6 +1241,8 @@
       }
     }
     .section-team {
+      height: 100%;
+
       .team {
         flex-direction: initial;
         justify-content: space-between;
@@ -1240,6 +1252,9 @@
       }
       .team__employee {
         min-width: 100%;
+      }
+      .team__employee:nth-child(3n) {
+        margin-top: 0;
       }
     }
   }
@@ -1290,7 +1305,14 @@
       padding: 50px 100px;
     }
     .section-team {
-      padding: 75px 100px;
+      padding: 25px 100px;
+
+      .section__title {
+        margin-bottom: 30px;
+      }
+      .team__employee {
+        margin-bottom: 30px;
+      }
     }
     .section-contacts {
       .contacts {
