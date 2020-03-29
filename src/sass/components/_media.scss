@@ -944,16 +944,6 @@
       .team__row--second .team__employee {
         margin-left: 32px;
       }
-      .employee__info {
-        max-width: 190px;
-      }
-      .employee__name {
-        margin-bottom: 15px;
-        font-size: 25px;
-      }
-      .employee__position .text {
-        font-size: 25px;
-      }
     }
     .section-contacts {
       .section__title {
@@ -1156,7 +1146,7 @@
   .wrapper {
     .section {
       &__title {
-        font-size: 65px;
+        font-size: 50px;
         &:before {
           background-size: 75%;
         }
@@ -1183,6 +1173,15 @@
       &__title {
         &:before {
           right: -96px;
+        }
+      }
+      .services-steps {
+        .step__name {
+          margin-bottom: 50px;
+          font-size: 60px;
+        }
+        .step__description {
+          font-size: 16px;
         }
       }
     }
@@ -1212,6 +1211,14 @@
 
 @media only screen and (min-width: 1601px) and (max-width: 1800px) {
   .wrapper {
+    .section {
+      &__title {
+        font-size: 55px;
+        &:before {
+          background-size: 75%;
+        }
+      }
+    }
     .section-home {
       &__right-side {
         background-position: 30px 100px;
@@ -1268,6 +1275,11 @@
       }
     }
     .section-home {
+      &__title {
+        width: 480px;
+        margin: 85px auto;
+        font-size: 80px;
+      }
       &__vertical-lines {
         right: 25px;
 
@@ -1294,6 +1306,9 @@
         margin-bottom: 30px;
         padding: 0 50px 0 0;
       }
+      video {
+        max-height: 650px;
+      }
     }
     .section-services {
       padding: 50px 100px;
@@ -1313,8 +1328,24 @@
       .team__employee {
         margin-bottom: 30px;
       }
+      .employee__info {
+        max-width: 180px;
+      }
+      .employee__name {
+        margin-bottom: 15px;
+        font-size: 24px;
+      }
+      .employee__position .text {
+        font-size: 24px;
+      }
+      .team__row--second .team__employee {
+        margin-left: 100px;
+      }
     }
     .section-contacts {
+      .section__title {
+        margin: 60px 0 125px;
+      }
       .contacts {
         margin-left: 0;
       }
