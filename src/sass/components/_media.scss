@@ -154,19 +154,21 @@
     }
 
     .section-works {
-      padding: 55px 10px !important;
+      padding: 25px 10px !important;
+
+      &:after {
+        display: none;
+      }
 
       &__container {
         height: 100%;
 
         &:after {
-          top: -50px;
-          left: 0;
+          display: none;
         }
 
         &:before {
-          top: -85px;
-          right: 0;
+          display: none;
         }
       }
 
@@ -174,73 +176,80 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 40px;
       }
 
-      .works__item {
-        margin-bottom: 100px;
-      }
-
-      .works__item--first {
-        position: relative;
-      }
-
-      .works__item--second {
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-
-        .works__title {
-          max-width: 210px;
-        }
-      }
-
-      .works__item--third {
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-
-        .works__container {
-          bottom: -75px;
+      .works {
+        &__container {
+          display: none;
         }
 
-        .works__title {
+        &__item {
+          margin-bottom: 25px;
+        }
+
+        &__item--first {
+          position: relative;
+        }
+
+        &__item--second {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+
+          .works__title {
+            max-width: 210px;
+          }
+        }
+
+        &__item--third {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+
+          .works__container {
+            bottom: -75px;
+          }
+
+          .works__title {
+            margin-bottom: 15px;
+          }
+        }
+
+        &__item--fourth {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+
+          .works__container {
+            bottom: -75px;
+          }
+
+          .works__title {
+            margin: 0 0 15px 0;
+          }
+        }
+
+        &__title {
+          max-width: 170px;
+          font-size: 28px;
+
+          &:before {
+            background-size: 70%;
+          }
+        }
+
+        video {
           margin-bottom: 15px;
         }
-      }
-
-      .works__item--fourth {
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-
-        .works__container {
-          bottom: -75px;
-        }
-
-        .works__title {
-          margin: 0 0 15px 0;
-        }
-      }
-
-      .works__title {
-        max-width: 170px;
-        font-size: 28px;
-
-        &:before {
-          background-size: 70%;
-        }
-      }
-
-      .works video {
-        margin-bottom: 15px;
       }
     }
 
     .section-smm {
-      padding: 50px 10px !important;
+      padding: 25px 10px !important;
 
       .slider {
         width: 100%;
@@ -252,7 +261,7 @@
         }
 
         &__date {
-          max-width: 100px;
+          max-width: 85px;
         }
 
         &__line {
@@ -272,76 +281,130 @@
 
     .section-team {
       padding: 50px 10px !important;
+      
+      .team {
+        flex-direction: column !important;
+        align-items: center;
 
+        &__employee {
+          min-width: 320px;
+          margin-bottom: 30px;
+
+          &:nth-child(3n) {
+            margin-top: 0;
+          }
+        }
+
+        &__row--second {
+          .team__employee {
+            margin-left: 0;
+          }
+        }
+      }
       .employee__info {
-        max-width: 200px;
+        max-width: 180px;
+        margin-bottom: 15px;
+      }
+      .employee__name {
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+      .employee__about {
+        max-width: 250px;
+        font-size: 12px;
+      }
+      .employee__position .text {
+        margin: auto -8px;
+        font-size: 20px;
+      }
+      .employee__position .line {
+        margin-left: 25px;
       }
     }
 
     .section-contacts {
+      display: flex;
+      flex-direction: column;
+
+      .section__title {
+        margin: 30px auto 40px;
+      }
+      .video__overlay:before {
+        display: none;
+      }
+      &__form {
+        width: 100%;
+        height: 450px;
+      }
+      &__info {
+        width: 100%;
+        height: 400px;
+      }
       .contacts {
-        max-height: 370px;
-        max-width: 360px;
+        max-height: 270px;
+        max-width: 320px;
 
         &__or-empty {
-          width: 190px;
+          width: 175px;
         }
 
         &__or-full {
-          top: 100px;
-          height: 190px;
+          top: 75px;
+          height: 175px;
         }
 
         &__phone {
-          left: 200px;
+          top: 15px;
+          left: 180px;
         }
 
         &__email {
           bottom: 0;
-          left: 80px;
+          left: 75px;
         }
 
         .email {
-          margin-bottom: 15px;
-          font-size: 22px;
+          margin-bottom: 10px;
+          font-size: 20px;
 
           &__title {
-            margin-bottom: 15px;
-            font-size: 25px;
+            margin-bottom: 10px;
+            font-size: 20px;
           }
         }
 
         .phone {
-          font-size: 22px;
+          font-size: 20px;
 
           &__title {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
           }
 
           &__tel {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
           }
         }
       }
-
       .form {
-        max-width: 350px;
+        width: 100%;
+        max-width: 340px;
 
         &__input {
-          font-size: 22px;
-          height: 50px;
-          line-height: 50px;
+          font-size: 20px;
+          height: 45px;
+          line-height: 45px;
         }
 
         textarea {
-          font-size: 22px;
-          height: 130px;
+          font-size: 20px;
+          height: 100px;
         }
 
         &__btn {
-          font-size: 22px;
-          height: 50px;
-          line-height: 48px;
+          max-width: 350px;
+          font-size: 20px;
+          height: 45px;
+          line-height: 43px;
         }
       }
     }
