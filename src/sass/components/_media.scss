@@ -1266,11 +1266,8 @@
       }
     }
     .section-design {
-      padding: 75px 100px;
-
-      &:after, &:before {
-        max-height: 100%;
-      }
+      padding: 10px 100px;
+      
       &:after {
         left: 25px;
       }
@@ -1279,7 +1276,6 @@
       }
 
       &__wrap {
-        margin-bottom: 50px;
         padding: 0 50px 0 0;
       }
     }

@@ -61,7 +61,7 @@ design.onmouseout = function(){
 };
 
 branding.onmouseover = function(){
-    branding.innerHTML = '[брандинг]';
+    branding.innerHTML = '[брендинг]';
 };
 branding.onmouseout = function(){
     branding.innerHTML = 'branding';
@@ -126,5 +126,12 @@ $(function() {
             );
         });
         return false;
+    });
+
+    $('.section-design__video').click(function(){
+        let volume = $(this);
+        volume.toggleClass('on');
+        if (volume.is('.on')) $('#video').prop("volume", 1);
+        else $('#video').prop("volume", 0);
     });
 });
