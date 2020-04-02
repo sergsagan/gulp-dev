@@ -91,6 +91,12 @@
     left: 0;
   }
 
+  &__mobile-image {
+    display: none;
+    max-width: 300px;
+    margin: 50px 0;
+  }
+
   &__nav {
     margin-left: 130px;
   }

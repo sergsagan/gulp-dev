@@ -39,53 +39,45 @@ function isPartiallyVisible(el) {
     return ((top + height >= 0) && (height + window.innerHeight >= bottom));
 }
 
-let smm = document.getElementById('smm');
-let design = document.getElementById('design');
-let branding = document.getElementById('branding');
-let production = document.getElementById('production');
-let team = document.getElementById('team');
-let contact = document.getElementById('contact');
+let firstLink = document.getElementById('firstLink');
+let secondLink = document.getElementById('secondLink');
+let thirdLink = document.getElementById('thirdLink');
+let fourthLink = document.getElementById('fourthLink');
+let fifthLink = document.getElementById('fifthLink');
 
-smm.onmouseover = function(){
-    smm.innerHTML = '[смм]';
+firstLink.onmouseover = function(){
+    firstLink.innerHTML = '[шоурил]';
 };
-smm.onmouseout = function(){
-    smm.innerHTML = 'smm';
-};
-
-design.onmouseover = function(){
-    design.innerHTML = '[дизайн]';
-};
-design.onmouseout = function(){
-    design.innerHTML = 'design';
+firstLink.onmouseout = function(){
+    firstLink.innerHTML = 'showreel';
 };
 
-branding.onmouseover = function(){
-    branding.innerHTML = '[брендинг]';
+secondLink.onmouseover = function(){
+    secondLink.innerHTML = '[услуги]';
 };
-branding.onmouseout = function(){
-    branding.innerHTML = 'branding';
-};
-
-production.onmouseover = function(){
-    production.innerHTML = '[продакшн]';
-};
-production.onmouseout = function(){
-    production.innerHTML = 'production';
+secondLink.onmouseout = function(){
+    secondLink.innerHTML = 'what we do';
 };
 
-team.onmouseover = function(){
-    team.innerHTML = '[команда]';
+thirdLink.onmouseover = function(){
+    thirdLink.innerHTML = '[кейсы]';
 };
-team.onmouseout = function(){
-    team.innerHTML = 'team';
+thirdLink.onmouseout = function(){
+    thirdLink.innerHTML = 'cases';
 };
 
-contact.onmouseover = function(){
-    contact.innerHTML = '[контакты]';
+fourthLink.onmouseover = function(){
+    fourthLink.innerHTML = '[команда]';
 };
-contact.onmouseout = function(){
-    contact.innerHTML = 'contact';
+fourthLink.onmouseout = function(){
+    fourthLink.innerHTML = 'team';
+};
+
+fifthLink.onmouseover = function(){
+    fifthLink.innerHTML = '[контакты]';
+};
+fifthLink.onmouseout = function(){
+    fifthLink.innerHTML = 'contact';
 };
 
 const anchors = document.querySelectorAll('a[href*="#"]');

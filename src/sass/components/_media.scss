@@ -1,15 +1,8 @@
-@media only screen and (min-width: 320px) and (max-width: 480px) {}
-
-
-@media only screen and (min-width: 481px) and (max-width: 600px) {
-
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 850px) {
   .wrapper {
     .section__title {
-      font-size: 35px;
-      margin-left: 50px;
+      font-size: 40px;
+      margin: 0 auto;
     }
 
     .section-home {
@@ -17,23 +10,37 @@
 
       &__left-side {
         width: 100%;
-        max-width: 768px;
-        height: 500px;
+        max-width: 100%;
+        height: 600px;
       }
 
       &__right-side {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        max-width: 768px;
+        max-width: 100%;
         height: auto;
-        min-height: 450px;
+        min-height: 500px;
         padding-bottom: 0;;
-        background-position: 80px 30px;
+        background-size: 0;
       }
 
       &__title {
-        width: 325px;
-        margin: 35px auto;
-        font-size: 60px;
+        width: 350px;
+        font-size: 65px;
+      }
+
+      &__vertical-lines {
+        right: 25px;
+
+        &:before {
+          right: 25px;
+        }
+
+        &:after {
+          right: 50px;
+        }
       }
 
       &__top-lines {
@@ -52,18 +59,48 @@
         }
       }
 
+      &__mobile-image {
+        display: flex;
+      }
+
       &__nav {
-        margin-left: 30px;
+        width: 305px;
+        margin-left: 0;
+        margin-bottom: 50px;
       }
 
       .navigation__link {
         margin-bottom: 10px;
-        font-size: 38px;
+        font-size: 40px;
+      }
+
+      video {
+        height: 100%;
+        max-height: 600px;
       }
     }
 
     .section-design {
-      padding: 25px 10px !important;
+      padding: 50px 10px;
+
+      &:after, &:before {
+        width: 100%;
+        height: 29px;
+        left: 0;
+        right: 0;
+        background-image: url(../img/mobile/pitch-horizontal.png);
+        background-repeat: repeat-x;
+      }
+
+      &:after {
+        top: auto;
+        bottom: 0;
+      }
+
+      &:before {
+        top: 0;
+        bottom: auto;
+      }
 
       .section__title:before {
         top: 26px;
@@ -72,18 +109,24 @@
       }
 
       &__description {
-        max-width: 230px;
-        font-size: 16px;
-      }
+        display: none;
 
-      &__wrap {
-        margin-bottom: 25px !important;
-        padding: 0 65px 0 0 !important;
+        &--mobile {
+          display: block;
+          width: 100%;
+          max-width: 350px;
+          margin: 20px auto;
+
+          color: $dark-color;
+          font-family: $Montserrat;
+          font-size: 16px;
+          font-weight: 500;
+        }
       }
     }
 
     .section-services {
-      padding: 25px 10px !important;
+      padding: 25px 10px;
 
       &__title {
         max-width: 146px;
@@ -154,7 +197,7 @@
     }
 
     .section-works {
-      padding: 25px 10px !important;
+      padding: 25px 10px;
 
       &:after {
         display: none;
@@ -249,7 +292,7 @@
     }
 
     .section-smm {
-      padding: 25px 10px !important;
+      padding: 25px 10px;
 
       .slider {
         width: 100%;
@@ -280,7 +323,7 @@
     }
 
     .section-team {
-      padding: 50px 10px !important;
+      padding: 50px 10px;
       
       .team {
         flex-direction: column !important;
@@ -411,7 +454,7 @@
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 992px) {
+@media only screen and (min-width: 851px) and (max-width: 992px) {
   .wrapper {
     .section {
       &__title {
@@ -1153,6 +1196,11 @@
       }
     }
     .section-home {
+      &__title {
+        width: 480px;
+        margin: 85px auto;
+        font-size: 80px;
+      }
       &__right-side {
         background-position: 75px 80px;
       }
@@ -1220,6 +1268,11 @@
       }
     }
     .section-home {
+      &__title {
+        width: 480px;
+        margin: 85px auto;
+        font-size: 80px;
+      }
       &__right-side {
         background-position: 30px 100px;
       }
@@ -1267,7 +1320,7 @@
   }
 }
 
-@media only screen and (max-width: 1800px) {
+@media only screen and (min-width: 851px) and (max-width: 1800px) {
   .wrapper {
     .section {
       &__container {
@@ -1275,11 +1328,6 @@
       }
     }
     .section-home {
-      &__title {
-        width: 480px;
-        margin: 85px auto;
-        font-size: 80px;
-      }
       &__vertical-lines {
         right: 25px;
 
