@@ -10,15 +10,37 @@
 
     position: relative;
 
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      border: 2px solid $stack-color;
+      animation: shake 2s;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+    }
+
     &--first {
       position: absolute;
       top: 0;
       left: 0;
+
+      &:before {
+        top: -35px;
+        left: -35px;
+      }
     }
     &--second {
       position: absolute;
       top: -80px;
-      left: 484px;
+      left: 486px;
+
+      &:before {
+        top: -35px;
+        left: -35px;
+      }
 
       .works__title {
         max-width: 275px;
@@ -27,7 +49,12 @@
     &--third {
       position: absolute;
       top: 70px;
-      right: -14px;
+      right: -18px;
+
+      &:before {
+        left: -35px;
+        bottom: -105px;
+      }
 
       .works__title {
         max-width: 215px;
@@ -46,15 +73,16 @@
           background-repeat: no-repeat;
         }
       }
-      .works__container {
-        top: auto;
-        bottom: -105px;
-      }
     }
     &--fourth {
       position: absolute;
       top: 295px;
-      right: 469px;
+      right: 468px;
+
+      &:before {
+        left: -35px;
+        bottom: -105px;
+      }
 
       .works__title {
         max-width: 230px;
@@ -73,24 +101,21 @@
           background-repeat: no-repeat;
         }
       }
-      .works__container {
-        top: auto;
-        bottom: -105px;
-      }
     }
   }
-  &__container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: -35px;
-    left: -35px;
-    z-index: -1;
-    border: 2px solid $stack-color;
-  }
 
-  .animated {
-    animation-duration: 3s;
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
 
   video {
