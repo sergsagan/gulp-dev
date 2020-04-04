@@ -212,10 +212,17 @@
     }
 
     .section-works {
-      padding: 25px;
+      padding: 25px 25px 50px;
 
-      &:after, &:before {
+      &:before {
         display: none;
+      }
+
+      &:after {
+        width: 100%;
+        height: 86px;
+        bottom: 0;
+        background-image: url('../img/mobile-pitch-clip.png');
       }
 
       &__container {
