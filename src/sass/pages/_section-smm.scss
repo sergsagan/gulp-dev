@@ -1,6 +1,6 @@
 .section-smm {
   height: 100%;
-  padding: 70px 0;
+  padding: 25px 0;
 
   &:before {
     content: '';
@@ -19,8 +19,50 @@
   }
 
   .section__title {
+    margin-bottom: 50px;
     &:before {
       display: none;
+    }
+  }
+
+  .item__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .item {
+    margin-bottom: 100px;
+    position: relative;
+    cursor: pointer;
+
+    &__overlay {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 35px;
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: -25px;
+      left: -25px;
+      z-index: -1;
+
+      color: $base-color;
+      font-family: $Montserrat;
+      font-size: 22px;
+      font-weight: 400;
+
+      border: 2px solid $stack-color;
+    }
+
+    &:hover .item__overlay {
+      z-index: 1;
+      border: 2px solid rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.85);
+      transition: all 0.5s;
     }
   }
 }

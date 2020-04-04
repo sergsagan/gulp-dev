@@ -321,32 +321,21 @@
     }
 
     .section-smm {
-      padding: 25px 10px;
+      padding: 25px;
 
-      .slider {
-        width: 100%;
-        margin: 0 auto;
+      &:before {
+        display: none;
+      }
 
-        &__title {
-          font-size: 30px;
-          margin-left: 50px;
-        }
+      .item {
+        max-width: 100%;
+        margin: 0 auto 50px;
 
-        &__date {
-          max-width: 85px;
-        }
-
-        &__line {
-          margin-bottom: 35px;
-        }
-
-        &__image {
-          margin-bottom: 35px;
-        }
-
-        &__text {
-          font-size: 15px;
-          line-height: 25px;
+        &__overlay {
+          padding: 25px;
+          font-size: 18px;
+          top: -15px;
+          left: -15px;
         }
       }
     }
@@ -1049,8 +1038,18 @@
         }
       }
     }
-    .section-smm:before {
-      top: 370px;
+    .section-smm {
+      &:before {
+        top: 370px;
+      }
+
+      .item {
+        max-width: 325px;
+
+        &__overlay {
+          font-size: 18px;
+        }
+      }
     }
     .slider {
       margin: 0 auto;
@@ -1221,6 +1220,15 @@
         }
       }
     }
+    .section-smm {
+      .item {
+        max-width: 350px;
+
+        &__overlay {
+          font-size: 20px;
+        }
+      }
+    }
     .section-team {
       .team__row--second .team__employee {
         margin-left: 65px;
@@ -1323,6 +1331,11 @@
         }
       }
     }
+    .section-smm {
+      .item {
+        max-width: 380px;
+      }
+    }
     .section-works {
       &__list {
         margin: 85px auto 0;
@@ -1382,12 +1395,22 @@
   }
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (min-width: 851px) and (max-width: 1250px) {
   .wrapper {
     .section-smm,
     .section-team {
       &:before {
         display: none;
+      }
+    }
+    .section-smm {
+      .item {
+        max-width: 300px;
+        margin: 0 auto 100px;
+
+        &__overlay {
+          font-size: 16px;
+        }
       }
     }
     .section-team {
