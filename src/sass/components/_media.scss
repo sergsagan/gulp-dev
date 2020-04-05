@@ -349,14 +349,35 @@
 
     .section-team {
       padding: 50px 10px;
+
+      &:before {
+        width: 100%;
+        height: 78px;
+        left: 0;
+        bottom: auto;
+        background-image: url(../img/team/horizontal-line-mobile.png);
+        transform: rotate(0) ;
+      }
+
+      .section__title {
+        margin-top: 100px;
+      }
       
       .team {
         flex-direction: column !important;
         align-items: center;
 
+        &__row {
+          flex-direction: column;
+        }
+
         &__employee {
-          min-width: 320px;
+          min-width: 300px;
           margin-bottom: 30px;
+
+          &:nth-child(even) {
+            margin-left: 50px;
+          }
 
           &:nth-child(3n) {
             margin-top: 0;
@@ -366,27 +387,34 @@
         &__row--second {
           .team__employee {
             margin-left: 0;
+
+            &:nth-child(odd) {
+              margin-left: 50px;
+            }
           }
         }
       }
-      .employee__info {
-        max-width: 180px;
-        margin-bottom: 15px;
-      }
-      .employee__name {
-        margin-bottom: 15px;
-        font-size: 20px;
-      }
-      .employee__about {
-        max-width: 250px;
-        font-size: 12px;
-      }
-      .employee__position .text {
-        margin: auto -8px;
-        font-size: 20px;
-      }
-      .employee__position .line {
-        margin-left: 25px;
+
+      .employee {
+        &__info {
+          max-width: 200px;
+          margin-bottom: 15px;
+        }
+        &__name {
+          margin-bottom: 15px;
+          font-size: 20px;
+        }
+        &__about {
+          max-width: 250px;
+          font-size: 12px;
+        }
+        &__position .text {
+          margin: auto -8px;
+          font-size: 20px;
+        }
+        &__position .line {
+          margin-left: 25px;
+        }
       }
     }
 
@@ -1488,16 +1516,17 @@
       padding: 50px 100px;
     }
     .section-team {
-      padding: 25px 100px;
+      padding: 10px 100px;
 
       .section__title {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
       .team__employee {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
       .employee__info {
         max-width: 180px;
+        margin-bottom: 15px;
       }
       .employee__name {
         margin-bottom: 15px;
