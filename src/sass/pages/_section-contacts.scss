@@ -60,6 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     width: 50%;
     max-width: 960px;
@@ -75,6 +76,7 @@
     max-width: 660px;
     height: 100%;
     max-height: 610px;
+    margin-bottom: 100px;
 
     &__or-empty {
       position: absolute;
@@ -141,6 +143,26 @@
 
       &:nth-child(3) {
         color: $stack-color;
+      }
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__link {
+      margin: 0 15px;
+      color: $stack-color;
+      font-family: $Montserrat;
+      font-size: 34px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:nth-child(even) {
+        color: $dark-color;
       }
     }
   }
