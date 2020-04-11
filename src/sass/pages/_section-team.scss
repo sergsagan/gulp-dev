@@ -1,22 +1,22 @@
 .section-team {
     height: 100%;
-    padding: 25px 0;
+    padding: 25px 0 0;
+    overflow: hidden;
 
     &:before {
         content: '';
 
         display: block;
-        width: 1092px;
-        height: 100%;
+        width: 974px;
+        height: 1036px;
 
         position: absolute;
         top: 0;
         right: 0;
         z-index: -2;
 
-        background-image: url('../img/horizontal-lines-long.png');
+        background-image: url('../img/lines-works.png');
         background-repeat: no-repeat;
-        transform: rotate(90deg);
     }
 
     .section__title {

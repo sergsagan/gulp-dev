@@ -17,7 +17,6 @@ var gulp = require('gulp'),
     gulpIf = require('gulp-if'),
     plumber = require('gulp-plumber'),
     rigger = require('gulp-rigger'),
-	spritesmith = require('gulp.spritesmith'),
     svgSprite = require("gulp-svg-sprites"),
     size = require('gulp-size'),
     opn = require('opn');
@@ -155,6 +154,9 @@ gulp.task('js:vendor', function() {
               "jquery": {
                   "main": "./dist/jquery.min.js"
               },
+              "jquery.marquee": {
+                  "main": "./jquery.marquee.min.js"
+              },
               "slick-carousel": {
                   "main": "./slick/slick.min.js"
               },
@@ -227,17 +229,17 @@ gulp.task('svgsprite-clean', function (cb) {
 // ~ Sprite png ~
 
 
-gulp.task('sprite', function () {
-	var spriteData = gulp.src(src.sprite).pipe(spritesmith({
-		imgName: '../img/sprite.png',
-		cssName: '_sprite.scss',
-		cssFormat: 'scss',
-		padding: 0
-	}));
-	
-	spriteData.img.pipe(gulp.dest('./src/img'));
-	spriteData.css.pipe(gulp.dest('./src/sass/utils'));
-});
+// gulp.task('sprite', function () {
+// 	var spriteData = gulp.src(src.sprite).pipe(spritesmith({
+// 		imgName: '../img/sprite.png',
+// 		cssName: '_sprite.scss',
+// 		cssFormat: 'scss',
+// 		padding: 0
+// 	}));
+//
+// 	spriteData.img.pipe(gulp.dest('./src/img'));
+// 	spriteData.css.pipe(gulp.dest('./src/sass/utils'));
+// });
 
 // Удаление старых файлов
 gulp.task('sprite-clean', function (cb) {

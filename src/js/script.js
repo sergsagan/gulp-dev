@@ -39,45 +39,45 @@ function isPartiallyVisible(el) {
     return ((top + height >= 0) && (height + window.innerHeight >= bottom));
 }
 
-let firstLink = document.getElementById('firstLink');
 let secondLink = document.getElementById('secondLink');
 let thirdLink = document.getElementById('thirdLink');
 let fourthLink = document.getElementById('fourthLink');
 let fifthLink = document.getElementById('fifthLink');
-
-firstLink.onmouseover = function(){
-    firstLink.innerHTML = '[шоурил]';
-};
-firstLink.onmouseout = function(){
-    firstLink.innerHTML = 'showreel';
-};
+let sixthLink = document.getElementById('sixthLink');
 
 secondLink.onmouseover = function(){
-    secondLink.innerHTML = '[услуги]';
+    secondLink.innerHTML = '[шоурил]';
 };
 secondLink.onmouseout = function(){
-    secondLink.innerHTML = 'what we do';
+    secondLink.innerHTML = 'showreel';
 };
 
 thirdLink.onmouseover = function(){
-    thirdLink.innerHTML = '[кейсы]';
+    thirdLink.innerHTML = '[услуги]';
 };
 thirdLink.onmouseout = function(){
-    thirdLink.innerHTML = 'cases';
+    thirdLink.innerHTML = 'what we do';
 };
 
 fourthLink.onmouseover = function(){
-    fourthLink.innerHTML = '[команда]';
+    fourthLink.innerHTML = '[кейсы]';
 };
 fourthLink.onmouseout = function(){
-    fourthLink.innerHTML = 'team';
+    fourthLink.innerHTML = 'cases';
 };
 
 fifthLink.onmouseover = function(){
-    fifthLink.innerHTML = '[контакты]';
+    fifthLink.innerHTML = '[команда]';
 };
 fifthLink.onmouseout = function(){
-    fifthLink.innerHTML = 'contact';
+    fifthLink.innerHTML = 'team';
+};
+
+sixthLink.onmouseover = function(){
+    sixthLink.innerHTML = '[контакты]';
+};
+sixthLink.onmouseout = function(){
+    sixthLink.innerHTML = 'contact';
 };
 
 const anchors = document.querySelectorAll('a[href*="#"]');
@@ -96,7 +96,6 @@ for (let anchor of anchors) {
 }
 
 $(function() {
-
     $('.slider').slick({
         infinite: true,
         speed: 500,
@@ -106,7 +105,6 @@ $(function() {
         autoplay: true,
         autoplaySpeed: 3000,
     });
-
     $("#form").submit(function() {
         $.ajax({
             type: "POST",
@@ -119,11 +117,13 @@ $(function() {
         });
         return false;
     });
+});
 
-    $('.section-design__video').click(function(){
-        let volume = $(this);
-        volume.toggleClass('on');
-        if (volume.is('.on')) $('#video').prop("volume", 1);
-        else $('#video').prop("volume", 0);
+$(window).load(function() {
+    $('.marquee').marquee({
+        duration: 15000,
+        startVisible: true,
+        duplicated: true
     });
 });
+
