@@ -5,8 +5,8 @@
   &__info {
     display: flex;
     width: 100%;
-    max-width: 225px;
-    margin-bottom: 25px;
+    max-width: 200px;
+    margin-bottom: 20px;
     position: relative;
   }
 
@@ -54,6 +54,7 @@
     color: $dark-color;
     font-family: $Montserrat;
     font-size: 14px;
+    line-height: 20px;
     font-weight: 500;
   }
 }

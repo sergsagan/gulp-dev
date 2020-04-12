@@ -351,6 +351,11 @@
         padding: 20px;
         font-size: 18px;
       }
+
+      #go-top {
+        bottom: 0;
+        right: 5px;
+      }
     }
 
     .section-team {
@@ -361,12 +366,12 @@
         height: 78px;
         left: 0;
         bottom: auto;
-        background-image: url(../img/team/horizontal-line-mobile.png);
+        background-image: url('../img/team/horizontal-line-mobile.png');
         transform: rotate(0) ;
       }
 
       .section__title {
-        margin-top: 100px;
+        margin-top: 50px;
       }
       
       .team {

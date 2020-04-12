@@ -1,6 +1,6 @@
 .section-team {
     height: 100%;
-    padding: 25px 0 0;
+    padding: 0;
     overflow: hidden;
 
     &:before {
@@ -20,7 +20,7 @@
     }
 
     .section__title {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         
         &:before {
             display: none;
@@ -36,8 +36,8 @@
           justify-content: space-between;
 
           &--second {
-              .team__employee {
-                  margin-left: 140px;
+            .team__employee {
+                  margin-left: 100px;
 
                   &:nth-child(3n) {
                       margin-right: -100px;
@@ -47,12 +47,12 @@
         }
 
         &__employee {
-            min-width: 370px;
-            margin-bottom: 50px;
+          max-width: 370px;
+          margin-bottom: 30px;
 
-            &:nth-child(3n) {
-                margin-top: -80px;
-            }
+          &:nth-child(3n) {
+              margin-top: -80px;
+          }
         }
     }
 }
