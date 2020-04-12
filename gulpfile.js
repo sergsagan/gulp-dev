@@ -111,14 +111,7 @@ gulp.task('styles:vendor', function() {
               },
               "animate.css": {
                   "main": "./animate.css"
-              },
-              "slick-carousel": {
-                  "main": [
-                      "./slick/slick.css",
-                      "./slick/slick-theme.css",
-                      "./slick/fonts/!*.*"
-                  ]
-              },
+              }
           }
   }))
   .pipe(cssFilter)
@@ -156,11 +149,7 @@ gulp.task('js:vendor', function() {
               },
               "jquery.marquee": {
                   "main": "./jquery.marquee.min.js"
-              },
-              "slick-carousel": {
-                  "main": "./slick/slick.min.js"
-              },
-
+              }
           }
   }))
       .pipe(jsFilter)

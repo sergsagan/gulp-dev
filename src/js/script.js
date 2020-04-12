@@ -96,15 +96,6 @@ for (let anchor of anchors) {
 }
 
 $(function() {
-    $('.slider').slick({
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        arrows: false,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 3000,
-    });
     $("#form").submit(function() {
         $.ajax({
             type: "POST",

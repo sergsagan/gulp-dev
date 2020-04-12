@@ -325,6 +325,10 @@
           min-height: 180px;
         }
       }
+
+      .marquee {
+        bottom: 0;
+      }
     }
 
     .section-smm {
@@ -942,7 +946,7 @@
       }
       .video__overlay {
         &:before {
-          top: 12%;
+          top: 22%;
         }
       }
     }
