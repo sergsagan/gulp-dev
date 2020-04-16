@@ -109,6 +109,9 @@ gulp.task('styles:vendor', function() {
               "normalize.css": {
                   "main": "./normalize.css"
               },
+              "mediaelement": {
+                  "main": "./build/mediaelementplayer.min.css"
+              },
               "animate.css": {
                   "main": "./animate.css"
               }
@@ -146,6 +149,9 @@ gulp.task('js:vendor', function() {
           "overrides": {
               "jquery": {
                   "main": "./dist/jquery.min.js"
+              },
+              "mediaelement": {
+                  "main": "./build/mediaelement-and-player.min.js"
               },
               "jquery.marquee": {
                   "main": "./jquery.marquee.min.js"

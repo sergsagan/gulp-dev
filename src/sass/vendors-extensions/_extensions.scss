@@ -1,0 +1,24 @@
+.mejs__button > button {
+  background: transparent url('../img/mejs-controls.svg');
+}
+
+.mejs__play > button {
+  background-position: 0 0;
+}
+
+.mejs__pause > button {
+  background-position: -20px 0;
+}
+
+.mejs__mute > button {
+  background-position: -60px 0;
+}
+
+.mejs__unmute > button {
+  background-position: -40px 0;
+}
+
+.mejs__overlay-button {
+  background: url('../img/mejs-controls.svg') no-repeat ;
+  background-position: 0 -39px;
+}

@@ -95,7 +95,12 @@ for (let anchor of anchors) {
     })
 }
 
-$(function() {
+$(document).ready(function() {
+    $('.section-design__video').mediaelementplayer({
+        features: ['playpause','volume','progress'],
+        videoVolume: 'horizontal',
+    });
+
     $("#form").submit(function() {
         $.ajax({
             type: "POST",
