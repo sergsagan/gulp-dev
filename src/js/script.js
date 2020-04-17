@@ -97,8 +97,7 @@ for (let anchor of anchors) {
 
 $(document).ready(function() {
     $('.section-design__video').mediaelementplayer({
-        features: ['playpause','volume','progress'],
-        videoVolume: 'horizontal',
+        features: ['playpause','volume','progress']
     });
 
     $("#form").submit(function() {
