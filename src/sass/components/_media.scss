@@ -390,7 +390,11 @@
           min-width: 300px;
           margin-bottom: 30px;
 
-          &:nth-child(3n) {
+          &:nth-child(2) {
+            margin-top: 0;
+          }
+
+          &:nth-child(3) {
             margin-top: 0;
           }
         }
@@ -412,7 +416,7 @@
           font-size: 12px;
         }
         &__position .text {
-          margin: auto -8px;
+          margin: 30px -8px 0;
           font-size: 20px;
         }
         &__position .line {
@@ -877,6 +881,11 @@
     .section-smm:before {
       top: 370px;
     }
+    .section-team {
+      .team__employee:nth-child(2) {
+        margin-top: 0;
+      }
+    }
     .section-contacts {
       .contacts {
         max-width: 460px;
@@ -1074,18 +1083,23 @@
       }
     }
     .section-smm {
-      &:before {
-        top: 370px;
-      }
-
       .item__overlay {
         padding: 10px;
         font-size: 14px;
       }
     }
     .section-team {
-      .team__row--second .team__employee {
-        margin-left: 32px;
+      .employee__about {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      .employee__position .line {
+        margin-left: 30px;
+      }
+
+      .team__employee:nth-child(2) {
+        margin-top: 0;
       }
     }
     .section-contacts {
@@ -1242,8 +1256,13 @@
       }
     }
     .section-team {
-      .team__row--second .team__employee {
-        margin-left: 65px;
+      .employee__about {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      .employee__position .line {
+        margin-left: 30px;
       }
     }
     .section-contacts {
@@ -1507,7 +1526,10 @@
       .team__employee {
         min-width: 100%;
       }
-      .team__employee:nth-child(3n) {
+      .team__employee:nth-child(2) {
+        margin-top: 0;
+      }
+      .team__employee:nth-child(3) {
         margin-top: 0;
       }
     }
@@ -1584,9 +1606,6 @@
       }
       .employee__position .text {
         font-size: 24px;
-      }
-      .team__row--second .team__employee {
-        margin-left: 100px;
       }
     }
     .section-contacts {

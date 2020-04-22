@@ -6,7 +6,7 @@
     display: flex;
     width: 100%;
     max-width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     position: relative;
   }
 
@@ -14,7 +14,7 @@
     display: flex;
 
     position: absolute;
-    top: 0;
+    top: -30px;
     left: 100%;
     bottom: 0;
 
@@ -30,22 +30,22 @@
     }
     
     .text {
-      margin: auto -12px;
+      margin: 30px -10px 0;
 
       color: $dark-color;
       font-family: $Montserrat;
-      font-size: 27px;
+      font-size: 24px;
       font-weight: 800;
       z-index: 1;
     }
   }
 
   &__name {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     color: $dark-color;
     font-family: $Montserrat;
-    font-size: 27px;
+    font-size: 26px;
     font-weight: 800;
   }
 
@@ -53,8 +53,8 @@
     max-width: 370px;
     color: $dark-color;
     font-family: $Montserrat;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 13px;
+    line-height: 16px;
     font-weight: 500;
   }
 }

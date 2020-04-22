@@ -20,7 +20,7 @@
     }
 
     .section__title {
-        margin-bottom: 20px;
+        margin-bottom: 35px;
         
         &:before {
             display: none;
@@ -37,10 +37,10 @@
 
           &--second {
             .team__employee {
-                  margin-left: 100px;
+                  margin-left: 25px;
 
                   &:nth-child(3n) {
-                      margin-right: -100px;
+                      margin-right: -25px;
                   }
               }
           }
@@ -50,8 +50,12 @@
           max-width: 370px;
           margin-bottom: 30px;
 
-          &:nth-child(3n) {
-              margin-top: -80px;
+          &:nth-child(2) {
+              margin-top: -50px;
+          }
+
+          &:nth-child(3) {
+            margin-top: -20px;
           }
         }
     }
