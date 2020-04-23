@@ -129,6 +129,11 @@
       &__wrap {
         padding: 0;
       }
+
+      &__video {
+        min-height: 100%;
+        max-height: 250px;
+      }
     }
 
     .section-services {
@@ -577,6 +582,10 @@
         max-width: 200px;
         font-size: 13px;
       }
+      &__video {
+        min-height: 550px;
+        max-height: 550px;
+      }
     }
     .section-services {
       &__title {
@@ -804,6 +813,10 @@
         max-width: 300px;
         font-size: 14px;
       }
+      &__video {
+        min-height: 550px;
+        max-height: 550px;
+      }
     }
     .section-services {
       &__title {
@@ -1000,6 +1013,10 @@
       &__description {
         max-width: 320px;
         font-size: 15px;
+      }
+      &__video {
+        min-height: 675px;
+        max-height: 675px;
       }
     }
     .section-services {
@@ -1206,6 +1223,10 @@
       &__description {
         font-size: 16px;
       }
+      &__video {
+        min-height: 700px;
+        max-height: 700px;
+      }
     }
     .section-services {
       &__title {
@@ -1353,6 +1374,11 @@
       &__description {
         font-size: 17px;
       }
+
+      &__video {
+        min-height: 700px;
+        max-height: 700px;
+      }
     }
     .section-services {
       &__title {
@@ -1486,6 +1512,10 @@
       &__container {
         max-width: 1440px;
       }
+    }
+    .section-design__video {
+      min-height: 720px;
+      max-height: 720px;
     }
   }
 }
