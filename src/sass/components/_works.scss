@@ -43,7 +43,7 @@
       }
 
       .works__title {
-        max-width: 275px;
+        max-width: 200px;
       }
     }
     &--third {
@@ -57,7 +57,7 @@
       }
 
       .works__title {
-        max-width: 215px;
+        max-width: 250px;
         margin-bottom: 30px;
 
         &:before {
@@ -85,7 +85,7 @@
       }
 
       .works__title {
-        max-width: 230px;
+        max-width: 150px;
         margin: 0 auto 30px;
 
         &:before {
@@ -124,7 +124,7 @@
   }
 
   &__title {
-    max-width: 210px;
+    max-width: 130px;
     position: relative;
 
     color: $accent-color;
