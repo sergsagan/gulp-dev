@@ -95,6 +95,26 @@ for (let anchor of anchors) {
     })
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    let toTopBtn = document.querySelector('.to-up');
+
+    window.onscroll = function () {
+        if (window.pageYOffset > 1000) {
+            toTopBtn.style.display = 'block'
+        } else {
+            toTopBtn.style.display = 'none'
+        }
+    }
+
+    toTopBtn.addEventListener('click', function () {
+        window.scrollBy({
+            top: -document.documentElement.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+});
+
 $(document).ready(function() {
     $('.section-design__video').mediaelementplayer({
         features: ['playpause','volume','progress']

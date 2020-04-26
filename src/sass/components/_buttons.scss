@@ -13,3 +13,16 @@
   background-color: transparent;
   line-height: 56px;
 }
+
+.to-up {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+
+  img {
+    width: 32px;
+    height: 56px;
+  }
+}
