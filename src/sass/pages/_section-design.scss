@@ -35,21 +35,6 @@
     padding: 0 90px 0 0;
   }
 
-  &__description {
-    width: 100%;
-    max-width: 400px;
-    
-    color: $dark-color;
-    font-family: $Montserrat;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 25px;
-
-    &--mobile {
-      display: none;
-    }
-  }
-
   &__video {
     width: 100%;
     height: 100%;

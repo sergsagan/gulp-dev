@@ -55,6 +55,13 @@
     left: 0;
   }
 
+  &__desktop {
+    display: block;
+  }
+
+  &__mobile {
+    display: none;
+  }
   
   &__info {
     display: flex;

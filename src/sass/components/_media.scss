@@ -8,6 +8,14 @@
         left: -70%!important;
       }
     }
+    .section-contacts {
+      video {
+        height: auto;
+        min-height: 600px;
+        max-height: none;
+        left: -50%!important;
+      }
+    }
   }
 }
 @media only screen and (max-width: 850px) {
@@ -130,22 +138,6 @@
         top: 26px;
         right: -70px;
         background-size: 60%;
-      }
-
-      &__description {
-        display: none;
-
-        &--mobile {
-          display: block;
-          width: 100%;
-          max-width: 350px;
-          margin: 20px auto;
-
-          color: $dark-color;
-          font-family: $Montserrat;
-          font-size: 16px;
-          font-weight: 500;
-        }
       }
 
       &__wrap {
@@ -586,9 +578,19 @@
           line-height: 58px;
         }
       }
+
       video {
+        height: auto;
         min-height: 600px;
-        left: -25%;
+        max-height: none;
+        left: 0;
+      }
+
+      &__desktop {
+        display: none;
+      }
+      &__mobile {
+        display: block;
       }
     }
 
@@ -633,10 +635,6 @@
       font-size: 30px;
     }
     .section-design {
-      &__description {
-        max-width: 200px;
-        font-size: 13px;
-      }
       &__video {
         min-height: 550px;
         max-height: 550px;
@@ -868,10 +866,6 @@
       font-size: 40px;
     }
     .section-design {
-      &__description {
-        max-width: 300px;
-        font-size: 14px;
-      }
       &__video {
         min-height: 550px;
         max-height: 550px;
@@ -1084,10 +1078,6 @@
       font-size: 40px;
     }
     .section-design {
-      &__description {
-        max-width: 320px;
-        font-size: 15px;
-      }
       &__video {
         min-height: 620px;
         max-height: 620px;
@@ -1305,9 +1295,6 @@
       font-size: 45px;
     }
     .section-design {
-      &__description {
-        font-size: 16px;
-      }
       &__video {
         min-height: 620px;
         max-height: 620px;
@@ -1456,10 +1443,6 @@
       font-size: 48px;
     }
     .section-design {
-      &__description {
-        font-size: 17px;
-      }
-
       &__video {
         min-height: 640px;
         max-height: 640px;
