@@ -567,7 +567,12 @@
       }
       video {
         min-height: 600px;
+        left: -25%;
       }
+    }
+
+    .to-up {
+      right: 25px;
     }
   }
 }

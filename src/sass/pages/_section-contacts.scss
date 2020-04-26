@@ -160,9 +160,18 @@
       font-weight: 800;
       text-decoration: none;
       cursor: pointer;
+      transition: 0.3s all;
+
+      &:hover {
+        color: $dark-color;
+      }
 
       &:nth-child(even) {
         color: $dark-color;
+
+        &:hover {
+          color: $stack-color;
+        }
       }
     }
   }
