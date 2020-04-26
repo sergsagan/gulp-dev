@@ -81,6 +81,14 @@
     @extend .video__overlay;
   }
 
+  &__desktop {
+    display: block;
+  }
+
+  &__mobile {
+    display: none;
+  }
+
   video {
     width: auto;
     height: 100vh;

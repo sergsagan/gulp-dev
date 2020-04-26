@@ -1,3 +1,15 @@
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    .section-home {
+      video {
+        height: auto;
+        min-height: 580px;
+        max-height: none;
+        left: -70%!important;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 850px) {
   .wrapper {
     .section__title {
@@ -76,8 +88,18 @@
       }
 
       video {
-        height: 100%;
+        height: auto;
         min-height: 580px;
+        max-height: none;
+        left: 0;
+      }
+
+      &__desktop {
+        display: none;
+      }
+
+     &__mobile {
+        display: block;
       }
     }
 
@@ -1651,6 +1673,14 @@
           right: 50px;
         }
       }
+
+      &__desktop {
+        display: block;
+      }
+
+      &__mobile {
+        display: none;
+      }
     }
     .section-design {
       padding: 10px 100px;
@@ -1693,7 +1723,7 @@
         margin-bottom: 25px;
       }
       .employee__info {
-        max-width: 180px;
+        width: 180px;
         margin-bottom: 15px;
       }
       .employee__name {
