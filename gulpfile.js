@@ -1,30 +1,30 @@
 // Requiring packages
 
-var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-    autoPrefixer = require('gulp-autoprefixer'),
-	cleanCSS = require('gulp-clean-css'),
-    uglify = require('gulp-uglify'),
-    minifyHTML = require('gulp-minify-html'),
-    imageMin = require('gulp-imagemin'),
-    pngquant = require('imagemin-pngquant'),
-    jsHint = require('gulp-jshint'),
-    concat = require('gulp-concat'),
-    del = require('del'),
-    gulpFilter = require('gulp-filter'),
-    mainBowerFiles = require('main-bower-files'),
-    connect = require('gulp-connect'),
-    gulpIf = require('gulp-if'),
-    plumber = require('gulp-plumber'),
-    rigger = require('gulp-rigger'),
-	spritesmith = require('gulp.spritesmith'),
-    svgSprite = require("gulp-svg-sprites"),
-    size = require('gulp-size'),
-    opn = require('opn'),
-    pug = require('gulp-pug');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const autoPrefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const minifyHTML = require('gulp-minify-html');
+const imageMin = require('gulp-imagemin');
+const imageminPngquant = require('imagemin-pngquant');
+const jsHint = require('gulp-jshint');
+const concat = require('gulp-concat');
+const del = require('del');
+const gulpFilter = require('gulp-filter');
+const mainBowerFiles = require('main-bower-files');
+const connect = require('gulp-connect');
+const gulpIf = require('gulp-if');
+const plumber = require('gulp-plumber');
+const rigger = require('gulp-rigger');
+const spriteSmith = require('gulp.spritesmith');
+const svgSprite = require("gulp-svg-sprites");
+const size = require('gulp-size');
+const opn = require('opn');
+const pug = require('gulp-pug');
 
 // Declaring paths and variables
-var src = {
+let src = {
         js: ['./src/js/**/*.js'],
         sass: ['./src/sass/main.{scss,sass}'],
         images: ['./src/img/**/*.*', './src/sass/img/svg/*.svg', '!./src/img/icons/sprites/*.png', '!./src/img/icons/sprites/*.svg'],
@@ -66,186 +66,142 @@ if (env === 'dev') {
  **********/
 
 // Start webserver
-gulp.task('webServer', function() {
+const webServer = () => {
     connect.server({
         root: outputDir,
         host: server.host,
         port: server.port,
         livereload: true
     });
-});
+}
+exports.webServer = webServer;
 
 
 // Open browser
-gulp.task('openBrowser', function() {
+const openBrowser = () => {
     opn( 'http://' + server.host + ':' + server.port);
-});
+}
+exports.openBrowser = openBrowser;
 
 // ~ Clean ~
 // Delete build folders
-gulp.task('cleanDev', function() {
+const cleanDev = () => {
     del(['./builds/development'], function (err, deletedFiles) {
         console.log('Files deleted:', deletedFiles.join(', '));
     });
-});
+}
+exports.cleanDev = cleanDev;
 
-gulp.task('cleanProd', function() {
+const cleanProd = () => {
     del(['./builds/production'], function (err, deletedFiles) {
         console.log('Files deleted:', deletedFiles.join(', '));
     });
-});
+}
+exports.cleanProd = cleanProd;
 
-gulp.task('clean', function() {
+const clean = () => {
     del(['./builds'], function (err, deletedFiles) {
         console.log('Files deleted:', deletedFiles.join(', '));
     });
-});
+}
+exports.clean = clean;
 
 
 // ~ Compile styles ~
-var cssFilter = gulpFilter('**/*.css');
+const cssFilter = gulpFilter('**/*.css');
 
 // Concat vendor CSS (uglify for production)
-gulp.task('styles:vendor', function() {
-  gulp.src(mainBowerFiles({
-          "overrides": {
-	          "bootstrap": {
-		          "main": [
-			          './dist/css/bootstrap.css',
-			          './dist/fonts/*.*'
-		          ]
-	          },
-            /*
-              "normalize.css": {
-                  "main": "./normalize.css"
-              },*/
-
-              "magnific-popup": {
-                  "main": "./dist/magnific-popup.css"
-              },
-
-              "slick-carousel": {
-                  "main": [
-                      "./slick/slick.css",
-                      "./slick/slick-theme.css",
-                      "./slick/fonts/!*.*"
-                  ]
-              },
-
-              "ionrangeslider": {
-                  "main": [
-                      './css/ion.rangeSlider.css',
-                      './css/ion.rangeSlider.skinHTML5.css'
-                  ]
-              },
-
-              "jquery.form-styler": {
-                  "main": "./dist/jquery.formstyler.css"
-              }
-          }
-  }))
-  .pipe(cssFilter)
-  .pipe(concat('vendor.css'))
-  .pipe(gulpIf(env !== 'dev', cleanCSS({compatibility: 'ie8'})))
-  .pipe(size())
-  .pipe(gulp.dest(outputDir + 'css'))
-});
+const stylesVendor = () => {
+    return gulp.src(mainBowerFiles({
+        "overrides": {
+            "slick-carousel": {
+                "main": [
+                    "./slick/slick.css",
+                    "./slick/slick-theme.css",
+                    "./slick/fonts/!*.*"
+                ]
+            }
+        }
+    }))
+        .pipe(cssFilter)
+        .pipe(concat('vendor.css'))
+        .pipe(gulpIf(env !== 'dev', cleanCSS({compatibility: 'ie8'})))
+        .pipe(size())
+        .pipe(gulp.dest(outputDir + 'css'))
+}
+exports.stylesVendor = stylesVendor;
 
 // Concat own SASS (uglify for production)
-
-gulp.task('styles', function () {
-	gulp.src(src.sass)
-		.pipe(plumber({}))
-		.pipe(sass({
-			precision: 3,
-			includePaths: ['.']
-		}))
-		.pipe(autoPrefixer())
-		.pipe(gulp.dest(outputDir + 'css'))
-		.pipe(size())
-		.pipe(connect.reload())
-});
+const styles = () => {
+    return gulp.src(src.sass)
+        .pipe(plumber({}))
+        .pipe(sass({
+            precision: 3,
+            includePaths: ['.']
+        }))
+        .pipe(autoPrefixer())
+        .pipe(gulp.dest(outputDir + 'css'))
+        .pipe(size())
+        .pipe(connect.reload())
+}
+exports.styles = styles;
 
 
 // ~ Compile JS ~
-var jsFilter = gulpFilter('**/*.js');
+const jsFilter = gulpFilter('**/*.js');
 
 // Concat vendor JS (uglify for production)
-gulp.task('js:vendor', function() {
-    gulp.src(mainBowerFiles({
-          "overrides": {
-              "jquery": {
-                  "main": "./dist/jquery.min.js"
-              },
-	
-	          "bootstrap": {
-		          "main": './dist/js/bootstrap.min.js'
-	          },
-              
-	          "magnific-popup": {
-                  "main": "./dist/jquery.magnific-popup.min.js"
-              },
+const jsVendor = () => {
+   return gulp.src(mainBowerFiles({
+        "overrides": {
+            "jquery": {
+                "main": "./dist/jquery.min.js"
+            },
 
-             "slick-carousel": {
-                  "main": "./slick/slick.min.js"
-              },
-	
-	          "bxslider-4": {
-		          "main": './dist/jquery.bxslider.min.js'
-	          },
-
-              "jquery.maskedinput": {
-                  "main": "./dist/jquery.maskedinput.min.js"
-              },
-
-              "jquery.form-styler": {
-                  "main": "./dist/jquery.formstyler.min.js"
-              },
-
-              "readmore-js": {
-                  "main": "./readmore.js"
-              }
-          }
-  }))
-      .pipe(jsFilter)
-      .pipe(concat('vendor.js'))
-      .pipe(gulpIf(env !== 'dev', uglify()))
-	  .pipe(size())
-      .pipe(gulp.dest(outputDir + 'js'))
-});
+            "slick-carousel": {
+                "main": "./slick/slick.min.js"
+            }
+        },
+        allowEmpty: true
+        }))
+        .pipe(jsFilter)
+        .pipe(concat('vendor.js'))
+        .pipe(gulpIf(env !== 'dev', uglify()))
+        .pipe(size())
+        .pipe(gulp.dest(outputDir + 'js'))
+}
+exports.jsVendor = jsVendor;
 
 // Concat own JS (uglify for production)
-gulp.task('js', function() {
-    gulp.src(src.js)
+const js = () => {
+    return gulp.src(src.js)
         .pipe(jsHint())
         .pipe(jsHint.reporter('default'))
         .pipe(concat('script.js'))
         .pipe(gulpIf(env !== 'dev', uglify()))
         .pipe(gulp.dest(outputDir + 'js'))
-	    .pipe(size())
+        .pipe(size())
         .pipe(connect.reload());
-});
-
-
+}
+exports.js = js;
 
 // ~ Images ~
 // Compress images and move 'em to output dir
-gulp.task('images', function() {
+const images = () => {
     return gulp.src(src.images)
         .pipe(imageMin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()],
+            use: [imageminPngquant()],
             interlaced: true
         }))
         .pipe(gulp.dest(outputDir + 'img'))
         .pipe(connect.reload())
-});
-
+}
+exports.images = images;
 
 //SVG-sprite
-
-gulp.task('svg-sprite', function (cb) {
+const svgSprites = () => {
     return gulp.src(src.svgsprite)
         .pipe(svgSprite(config = {
             shape: {
@@ -264,77 +220,92 @@ gulp.task('svg-sprite', function (cb) {
             }
         }))
         .pipe(gulp.dest('./src/img/'));
-});
+}
+exports.svgSprites = svgSprites;
 
-gulp.task('svgsprite-clean', function (cb) {
+const svgSpritesClean = () => {
     del(['./src/sass/img/svg'], cb);
-});
+}
+exports.svgSpritesClean = svgSpritesClean;
 
 // ~ Sprite png ~
 
+const sprite = () => {
+    const spriteData = gulp.src(src.sprite).pipe(spriteSmith({
+        imgName: '../img/sprite.png',
+        cssName: '_sprite.scss',
+        cssFormat: 'scss',
+        padding: 0
+    }));
 
-gulp.task('sprite', function () {
-	var spriteData = gulp.src(src.sprite).pipe(spritesmith({
-		imgName: '../img/sprite.png',
-		cssName: '_sprite.scss',
-		cssFormat: 'scss',
-		padding: 0
-	}));
-	
-	spriteData.img.pipe(gulp.dest('./src/img'));
-	spriteData.css.pipe(gulp.dest('./src/sass/utils'));
-});
+    spriteData.img.pipe(gulp.dest('./src/img'));
+    spriteData.css.pipe(gulp.dest('./src/sass/utils'));
+}
+exports.sprite = sprite;
 
 // Удаление старых файлов
-gulp.task('sprite-clean', function (cb) {
+const spriteClean = (cb) => {
     del(['./src/img/sprite.png', './src/sass/_sprite.scss'], cb);
-});
+}
+exports.spriteClean = spriteClean;
 
 
 // ~ Fonts ~
 // Copy fonts to output dir
-gulp.task('fonts', function() {
+const fonts = () => {
     return gulp.src(src.fonts)
         .pipe(gulp.dest(outputDir + 'fonts'))
         .pipe(connect.reload())
-});
+}
+exports.fonts = fonts;
 
 
 // Copy index to output dir (minify for production)
-gulp.task('html', function() {
-    gulp.src(src.html)
+const html = () => {
+    return gulp.src(src.html)
         .pipe(rigger())
         .pipe(gulpIf(env !== 'dev', minifyHTML()))
         .pipe(gulp.dest(outputDir))
-	    .pipe(size())
+        .pipe(size())
         .pipe(connect.reload())
-});
+}
+exports.html = html;
 
-gulp.task('pug', function() {
-    gulp.src(src.pug)
+const pugTemplate = () => {
+    return gulp.src(src.pug)
         .pipe(rigger())
         .pipe(pug({
             pretty: '\t'
         }))
         .pipe(gulp.dest(outputDir))
         .pipe(connect.reload())
-
-});
+}
+exports.pugTemplate = pugTemplate;
 
 // Watch for changes in /src directories
-gulp.task('watch', function() {
-    gulp.watch(src.js, ['js']);
-    gulp.watch('./src/sass/*.scss', ['styles']);
-    gulp.watch('./src/**/*.pug', ['pug']);
-    gulp.watch(src.images, ['images']);
-    gulp.watch(src.fonts, ['fonts']);
-});
-
-
-
-// ~Build tasks~
-//Build dev version
-gulp.task('build', ['styles:vendor', 'styles', 'js:vendor', 'js', 'images', 'fonts', 'pug']);
+const watch = () => {
+    gulp.watch(src.js, gulp.series(js));
+    gulp.watch('./src/sass/*.scss', gulp.series(styles));
+    gulp.watch('./src/**/*.pug', gulp.series(pugTemplate));
+    gulp.watch(src.images, gulp.series(images));
+    gulp.watch(src.fonts, gulp.series(fonts));
+}
+exports.watch = watch;
 
 // Build and run dev environment
-gulp.task('default', ['build', 'webServer', 'openBrowser', 'watch']);
+exports.default = gulp.series (
+    gulp.parallel (
+        stylesVendor,
+        styles,
+        jsVendor,
+        js,
+        images,
+        fonts,
+        pugTemplate
+    ),
+    gulp.parallel(
+        watch,
+        webServer,
+        openBrowser
+    )
+)
